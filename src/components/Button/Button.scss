@@ -1,0 +1,42 @@
+@import '../../var.scss';
+.btn{
+    $this: &;
+    background: $bg_clear_white;
+    border: none; 
+    padding: 24px 65px;
+    color: $text_dark;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 	0.75rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+        background-color: $bg_grey;
+    }
+    &--border{
+        border: 1px solid $text_hint;
+    }
+    &--dark{
+        color: $text_white;
+        background-color: $bg_dark;
+        &:hover{
+            background-color: rgba($bg_dark, 0.8);
+        }
+    }
+    &--dark#{&}--border{
+        border: 1px solid $bg_dark;
+    }
+    &--icon{
+        padding: 18px 22px;
+    }
+    &--text-icon{
+        padding: 24px 65px;
+        #{$this}__icon{
+            margin-left: 12px;
+        }
+    }
+    &--fullWidth{
+        width: 100%;
+    }
+}
