@@ -1,0 +1,37 @@
+@import '../../var.scss';
+.nav{
+    $this: &;
+    &__list{
+        display: flex;
+        list-style: none;
+    }
+    &__item{
+        transition: 0.3s ease-in-out;
+    }   
+    &__link{
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    &--header{
+        #{$this}__list{
+            gap: 40px;
+        }
+        #{$this}__item{
+            padding: 3px;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+
+            &:hover{
+                border-top: 1px solid $text_dark;
+                border-bottom: 1px solid $text_dark;
+            }
+        }
+        #{$this}__link{
+            color: $text_dark;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+    }
+}
