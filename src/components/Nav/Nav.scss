@@ -1,4 +1,5 @@
 @import '../../var.scss';
+@import '../../mixins.scss';
 .nav{
     $this: &;
     &__list{
@@ -7,10 +8,18 @@
     }
     &__item{
         transition: 0.3s ease-in-out;
+        padding: 3px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
     }   
     &__link{
+        display: block;
+        height: 100%;
+        width: 100%;
         font-size: 1rem;
         text-decoration: none;
+        transition: 0.3s ease-in-out;
     }
 
     &--header{
@@ -18,13 +27,8 @@
             gap: 40px;
         }
         #{$this}__item{
-            padding: 3px;
-            border-top: 1px solid transparent;
-            border-bottom: 1px solid transparent;
-
             &:hover{
-                border-top: 1px solid $text_dark;
-                border-bottom: 1px solid $text_dark;
+                @include topBottomBorder($text_dark)
             }
         }
         #{$this}__link{
@@ -32,6 +36,24 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-
+    }
+    &--footer{
+        #{$this}__list{
+            gap: 16px;
+            flex-direction: column;
+        }
+        #{$this}__link{
+            font-size: 0.875rem;
+            color: $text_white;
+            font-weight: bold;
+        }
+        #{$this}__item{
+            &:hover{
+                #{$this}__link{
+                    color: $text_hint;
+                }
+            }
+        }
     }
 }
+

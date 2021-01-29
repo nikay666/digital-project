@@ -1,0 +1,55 @@
+@import '../../var.scss';
+.list{
+    $this: &;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    &__icon{
+        margin-right: 20px;
+        transition: 0.3s ease-in-out;
+    }
+    &__link{
+        text-decoration: none;
+        display: flex;
+        transition: 0.3s ease-in-out;
+    }
+    &__item{
+        &:hover{
+            #{$this}__link{
+                color: $text_hint;
+            }
+            #{$this}__icon{
+                color: $text_hint;
+            }
+        }
+    }
+    &--col{
+        flex-direction: column;
+    }
+
+    &--list{
+        flex-direction: row;
+    }
+
+    &--light{
+        #{$this}__icon{
+            color: $text_white;
+        }
+        #{$this}__link{
+            color: $text_white;
+        }
+    }
+    &--dark{
+        
+        #{$this}__icon{
+            color: $text_dark;
+        }
+        #{$this}__link{
+            color: $text_dark;
+        } 
+    }
+
+
+}
