@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const CertificatesPage = props => {
     return (
         <div>
-            <h1>Certificates Page</h1>
+            <h1 className='h1'>сертификаты<br/><span className='h1__bold'>КОМПАНИИ</span></h1>
         </div>
     )
 }
