@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const GalleryPage = props => {
     return (
-        <div>
+        <div className='container'>
             <h1 className='h1'>ГАЛЕРЕЯ<br/><span className='h1__bold'>ФОТОГРАФИЙ</span></h1>
         </div>
     )

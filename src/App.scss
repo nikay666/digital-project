@@ -17,7 +17,7 @@
   }
 }
 .h2{
-  @include titles(4rem, $text_hint, lighter );
+  @include titles(4rem, $text_hint, 300 );
 }
  .h3{
   @include titles(2.5rem, $text_hint, lighter );

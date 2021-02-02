@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ContactsPage = props => {
     return (
-        <div>
+        <div className='container'>
             <h1 className='h1'>КОНТАКТНАЯ<br/><span className='h1__bold'>ИНФОРМАЦИЯ</span></h1>
         </div>
     )
