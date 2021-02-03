@@ -2,10 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import school from '../assets/img/projects/school.jpg' 
+import parking from '../assets/img/projects/parking.jpg'
+import office from '../assets/img/projects/parking.jpg'
 import { Card } from '../components/Card'
 
 const  projects = [
     {
+        id: 0,
         title: 'Общеобразовательная школа',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ut officia, architecto expedita nostrum magnam explicabo eos delectus illo. Dicta error, consequatur facere recusandae nisi voluptates ex repellendus exercitationem odio!',
         btnContent: 'смотреть',
@@ -13,6 +16,30 @@ const  projects = [
             {
                 url: school,
                 alt: 'school'
+            },
+        ]
+    },
+    {
+        id: 1,
+        title: 'Паркинг на 500 автомобилей',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ut officia, architecto expedita nostrum magnam explicabo eos delectus illo. Dicta error, consequatur facere recusandae nisi voluptates ex repellendus exercitationem odio!',
+        btnContent: 'смотреть',
+        media: [
+            {
+                url: parking,
+                alt: 'parking'
+            },
+        ]
+    },
+    {
+        id: 2,
+        title: 'Проект интерьера офиса',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ut officia, architecto expedita nostrum magnam explicabo eos delectus illo. Dicta error, consequatur facere recusandae nisi voluptates ex repellendus exercitationem odio!',
+        btnContent: 'смотреть',
+        media: [
+            {
+                url: office,
+                alt: 'office'
             },
         ]
     }
@@ -27,6 +54,7 @@ const ProjectsPage = props => {
                 {
                     projects.map(item => (
                         <Card
+                            key={item.id}
                             title={item.title}
                             titleType={3}
                             text={item.text}

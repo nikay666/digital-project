@@ -6,6 +6,7 @@ import { Card } from '../components/Card'
 import img1 from '../assets/img/about/img1.jpg'
 import img2 from '../assets/img/about/img2.jpg'
 import img3 from '../assets/img/about/img3.jpg'
+import { Tasks } from '../components/Tasks'
 
 const  card = {
     title: 'О компании',
@@ -27,6 +28,10 @@ const  card = {
         }
     ]
 }
+const tasks = [
+    'Создание комфортных условий и повышение качества обслуживания клиентов',
+    'Постоянно совершенствовать качество предоставляемых услуг путем обучения персонала, закупки нового оборудования и усиленной рекламы на рынке'
+]
 
 
 const MainPage = props => {
@@ -40,6 +45,7 @@ const MainPage = props => {
                 btnContent={card.btnContent}
                 media={card.media}
             />
+            <Tasks tasks={tasks} />
         </div>
     )
 }

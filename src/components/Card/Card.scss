@@ -35,7 +35,7 @@
         gap: 30px;
         
         &  #{$this}__img{
-            max-height: none;
+            height: auto;
             &:first-child{
                 grid-row: 1/1;
             }

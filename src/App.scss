@@ -19,6 +19,13 @@
 .h2{
   @include titles(4rem, $text_hint, 300 );
 }
- .h3{
-  @include titles(2.5rem, $text_hint, lighter );
- }
+.h3{
+@include titles(2.5rem, $text_hint, lighter );
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 60px 0;
+}
