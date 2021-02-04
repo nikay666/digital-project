@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Gallery.scss'
 import GalleryItem from './GalleryItem'
+import { Button } from '../Button'
 
 const Gallery = ({items}) => {
     return (
@@ -19,7 +20,16 @@ const Gallery = ({items}) => {
                       />
                     ))
                 }
+                 <Button 
+                    className="gallery__show-all" 
+                    icon='arrow-right'
+                    path='/projects'
+                    dark 
+                    link
+
+                >Все проекты</Button>
             </div>
+           
         </div>
     )
 }
