@@ -21,7 +21,7 @@ const Card = ({title, titleType, text, media, btnContent}) => {
                         <div className="card__imgs">
                             {
                                 media.map(item => (
-                                    <div className="card__img">
+                                    <div key={item.id} className="card__img">
                                         <img  src={item.url} alt={item.alt}/>
                                     </div>
                                 ))

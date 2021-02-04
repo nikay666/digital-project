@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "title": "Досуговый центр",
+        "url":  "/assets/gallery/pr1.jpg",
+        "link": "/dosug1"
+    },
+    {
+        "id": 1,
+        "title": "Досуговый центр",
+        "url":  "/assets/gallery/pr2.jpg",
+        "link": "/dosug2"
+    },
+    {
+        "id": 2,
+        "title": "Досуговый центр",
+        "url":  "/assets/gallery/pr3.jpg",
+        "link": "/dosug3"
+    },
+    {
+        "id": 3,
+        "title": "Досуговый центр",
+        "url":  "/assets/gallery/pr4.jpg",
+        "link": "/dosug4"
+    },
+    {
+        "id": 4,
+        "title": "Досуговый центр",
+        "url":  "/assets/gallery/pr5.jpg",
+        "link": "/dosug5"
+    }
+]

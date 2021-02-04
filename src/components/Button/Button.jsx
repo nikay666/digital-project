@@ -5,14 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Button.scss'
 import { Link } from 'react-router-dom'
 
-const Button = ({icon, dark, path, link, fullWidth, border, children}) => {
+const Button = ({icon, path, link, className, children, dark, whiteText, noPaddig, fullWidth, border}) => {
     const classes = classNames(
         'btn',  
         {'btn--dark': dark},
         {'btn--icon': icon},
+        {'btn--text-icon': children && icon},
+        {'btn--whiteText': whiteText},
         {'btn--border': border},
+        {'btn--noPaddig': noPaddig},
         {'btn--fullWidth': fullWidth},
-        {'btn--text-icon': children && icon}
+        className
     )
         const iconContent = (icon && <FontAwesomeIcon className="btn__icon" icon={icon} />)
         const textCotent = ( children && children)
@@ -37,7 +40,9 @@ Button.defaultProps = {
     border: false,
     fullWidth: false,
     link: false,
-    path: '/'
+    whiteText: false,
+    path: '/',
+    className: ''
 }
 
 Button.propTypes = {
@@ -46,7 +51,9 @@ Button.propTypes = {
     border: PropTypes.bool,
     fullWidth: PropTypes.bool,
     link: PropTypes.bool,
-    path: PropTypes.string
+    path: PropTypes.string,
+    whiteText: PropTypes.bool,
+    className: PropTypes.string
 }
 
 export default Button

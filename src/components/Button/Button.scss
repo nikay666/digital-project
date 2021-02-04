@@ -18,6 +18,15 @@
     &--border{
         border: 1px solid $text_hint;
     }
+    &--whiteText{
+        background-color: transparent;
+        color: $text_white;
+        border-bottom: 1px solid  transparent;
+        &:hover{
+            border-bottom: 1px solid  $text_white;
+            background-color: transparent;
+        }
+    }
     &--dark{
         color: $text_white;
         background-color: $bg_dark;
@@ -39,5 +48,8 @@
     }
     &--fullWidth{
         width: 100%;
+    }
+    &--noPaddig{
+        padding: 0;
     }
 }
