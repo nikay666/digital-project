@@ -14,7 +14,7 @@ const ContactsPage = ({contacts}) => {
 
 
     return (
-            <div className="columns">
+            <main className="main columns">
                 <div className="columns__col">
                     <h1 className='h1'>КОНТАКТНАЯ<br/><span className='h1__bold'>ИНФОРМАЦИЯ</span></h1>
                     <div className="info-block">
@@ -32,7 +32,7 @@ const ContactsPage = ({contacts}) => {
                 <div className="columns__col">
                     {frame}
                 </div>
-            </div>
+            </main>
     )
 }
 

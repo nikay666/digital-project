@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Card } from '../components/Card'
 import { Tasks } from '../components/Tasks'
-import { Gallery } from '../components/Gallery'
+import { MiniGallery } from '../components/MiniGallery'
 import { useFetch } from '../hooks'
 
 
@@ -10,13 +10,13 @@ const galleeryUrl = '/data/gallery.json'
 const tasksUrl  = '/data/task.json'
 const cardUrl = '/data/mainCard.json'
 
-const MainPage = props => {
+const MainPage = () => {
     const galleryItems = useFetch(galleeryUrl)
     const tasks  = useFetch(tasksUrl)
     const card =  useFetch(cardUrl)
 
     return (
-        <div className='container'>
+        <main className='main container'>
             <h1 className='h1'>PROJECT<br/><span className='h1__bold'>NURTOWN</span></h1>
             {
                 (card.length > 0 ) &&
@@ -29,10 +29,10 @@ const MainPage = props => {
                 />
             }
             <Tasks tasks={tasks} />
-            <Gallery
+            <MiniGallery
                 items={galleryItems}
             />
-        </div>
+        </main>
     )
 }
 

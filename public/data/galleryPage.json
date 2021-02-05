@@ -1,0 +1,52 @@
+[
+    {
+        "id": 0,
+        "url": "/assets/galleryPage/img1.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 1,
+        "url": "/assets/galleryPage/img2.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 2,
+        "url": "/assets/galleryPage/img3.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 3,
+        "url": "/assets/galleryPage/img4.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 4,
+        "url": "/assets/galleryPage/img5.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 5,
+        "url": "/assets/galleryPage/img6.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 6,
+        "url": "/assets/galleryPage/img7.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 7,
+        "url": "/assets/galleryPage/img8.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 8,
+        "url": "/assets/galleryPage/img9.jpg",
+        "text": "Описание или пояснение к изображеию"
+    },
+    {
+        "id": 9,
+        "url": "/assets/galleryPage/img10.jpg",
+        "text": "Описание или пояснение к изображеию"
+    }
+]

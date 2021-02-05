@@ -1,35 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import './Gallery.scss'
-import GalleryItem from './GalleryItem'
-import { Button } from '../Button'
+import GalleryCard from './GalleryCard'
 
 const Gallery = ({items}) => {
     return (
-        <div className='gallery'>
-            <h2 className="h2 galleery__title">Наши проекты</h2>
-            <div className="gallery__content">
-                {
-                    items.map(item => (
-                      <GalleryItem
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        url={item.url}
-                        path={item.link}
-                      />
-                    ))
-                }
-                 <Button 
-                    className="gallery__show-all" 
-                    icon='arrow-right'
-                    path='/projects'
-                    dark 
-                    link
-
-                >Все проекты</Button>
-            </div>
-           
+        <div className="gallery">
+        {
+              items.map(item => (
+                <GalleryCard
+                    key={item.id}
+                    img={item.url}
+                    text={item.text}
+                />
+            ))
+        }
         </div>
     )
 }

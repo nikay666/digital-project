@@ -1,99 +1,52 @@
 @import '../../var.scss';
+
 .gallery{
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 60px;
-    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
 
-    &__content{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-
-    }
-    &__show-all{
-        margin-left: auto;
+    &__card{
+        flex-basis: calc(100% / 5 - 30px);
+        height: 260px;
+        cursor: pointer;
     }
 }
 
-
-.cover{
+.g-card{
     $this: &;
-    flex-basis: calc(50% - 15px);
-    cursor: pointer;
+    position: relative;
+    z-index: 0;
     display: flex;
     flex-direction: column;
-    align-items: baseline;
-    gap: 15px;
-    position: relative;
-    height: 255px;
-    padding: 40px 60px;
-    overflow: hidden;
-    z-index: 0;
-    transition: 0.3s ease-in-out;
-    text-decoration: none;
+    justify-content: flex-end;
 
-    &::before{
-        position: absolute;
-        display: block;
-        content: '';
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: 0.3s ease-in-out;
-        z-index: 0;
-        background: transparent;
-    }
     &__img{
         position: absolute;
-        top:0;
-        left:0;
+        top: 0;
+        left: 0;
+        object-fit: cover;
         width: 100%;
         height: 100%;
-        object-fit: cover;
         z-index: -1;
-        transition: 0.3s ease-in-out;
     }
-    &__title{
-        color: $text_white;
-        font-weight: bold;
-        font-size: 2.5rem;
-        line-height: 100%;
+    &__desc{
+        z-index: 2;
+        padding: 20px;
+        background-color: $bg_grey;
         transition: 0.3s ease-in-out;
         opacity: 0;
-        z-index: 2;
+        transform: translateY(10px);
     }
-    &__btn{
-        visibility: hidden;
-        opacity: 0;
-        z-index: 2;
+    &__text{
+        color: $text_dark;
+        font-size: 0.875rem;
     }
 
     &:hover{
-        &::before{
-            background: rgba($bg_dark, 0.6);
-        }
-
-        #{$this}__title{
-            color: $text_white;
+        #{$this}__desc{
             opacity: 1;
-        }
-        #{$this}__btn{
-            visibility: visible;
-            opacity: 1;
+            transform: translate(0, 0);
         }
     }
-    
-    &:nth-of-type(5n + 3){
-        flex-basis: calc(25% - 15px);
-    }
-    &:nth-of-type(5n + 4){
-        flex-basis: calc(40% - 30px);
-    }
-    &:nth-of-type(5n + 5){
-        flex-basis: calc(35% - 15px);
-    }
-
 }

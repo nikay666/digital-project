@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Card } from '../components/Card'
 import { useFetch } from '../hooks'
@@ -9,7 +9,7 @@ const url = '/data/projects.json'
 const ProjectsPage = props => {
     const projects = useFetch(url)
     return (
-        <div className='container'>
+        <main className='main container'>
             <h1 className='h1'>НАШИ<br/><span className='h1__bold'>ПРОЕКТЫ</span></h1>
             <div className="projects">
                 {
@@ -25,9 +25,7 @@ const ProjectsPage = props => {
                     ))
                 }
             </div>
-
-            
-        </div>
+        </main>
     )
 }
 
