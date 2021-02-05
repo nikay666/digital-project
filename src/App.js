@@ -60,7 +60,6 @@ const contactList = [
     text: 'Galym.sultanov@mail.ru',
     link: 'mailto:Galym.sultanov@mail.ru',
   }
-
 ]
 const socialList = [
   { 
@@ -97,14 +96,14 @@ function App() {
           <Route exact path='/gallery' component={GalleryPage} />
           <Route exact path='/projects' component={ProjectsPage} />
           <Route exact path='/certificates' component={CertificatesPage} />
-          <Route exact path='/contacts' component={ContactsPage} />
+          <Route exact path='/contacts' render={(props) => <ContactsPage contacts={contactList} />} />
         </Switch>
-      </div>
-      <Footer 
+        <Footer 
         navList={navList}
         contactList={contactList}
         socialList={socialList}
       />
+      </div>
     </Router>
 
   );
