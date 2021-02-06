@@ -14,7 +14,7 @@ const ContactsPage = ({contacts}) => {
 
 
     return (
-            <main className="main columns">
+            <main className="main contacts columns">
                 <div className="columns__col">
                     <h1 className='h1'>КОНТАКТНАЯ<br/><span className='h1__bold'>ИНФОРМАЦИЯ</span></h1>
                     <div className="info-block">

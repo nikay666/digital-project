@@ -41,9 +41,9 @@
   border:0;
 }
 .columns{
+  $this: &;
   display: flex;
   gap: 30px;
-  padding-left: 130px;
 
   &__col{
     width: 100%;
@@ -52,6 +52,30 @@
     gap: 30px;
     align-items: baseline;
   }
+}
+
+.contact-form{
+  max-width: 400px;
+}
+
+.wrap{
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  &--center{
+    align-items: center;
+    justify-content: center;
+  }
+
+  img{
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.contacts{
+  padding-left: 130px;
 }
 
 .info-block{

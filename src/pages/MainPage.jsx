@@ -4,7 +4,9 @@ import { Card } from '../components/Card'
 import { Tasks } from '../components/Tasks'
 import { MiniGallery } from '../components/MiniGallery'
 import { useFetch } from '../hooks'
+import { Form } from '../components/Form'
 
+import imgContactForm from '../assets/img/form.jpg'
 
 const galleeryUrl = '/data/gallery.json'
 const tasksUrl  = '/data/task.json'
@@ -32,6 +34,18 @@ const MainPage = () => {
             <MiniGallery
                 items={galleryItems}
             />
+            <div className="columns">
+                <div className="columns__col contact-form">
+                    <h2 className="h2">Связаться с нами</h2>
+                    <Form/>
+                </div>
+                <div className="columns__col">
+                    <div className="wrap wrap--center">
+                        <img src={imgContactForm} alt=""/>
+                    </div>
+                </div>
+            </div>
+        
         </main>
     )
 }

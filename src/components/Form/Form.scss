@@ -1,0 +1,67 @@
+@import '../../var.scss';
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 20px;
+    width: 100%;
+
+    &__agree{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 16px;
+
+    }
+    &__text{
+        color: $text_dark_grey;
+        font-size: 0.875rem;
+        letter-spacing: 0.03rem;
+    }
+
+    &__fieldset{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: none;
+        width: 100%;
+    }
+}
+
+.checkbox{
+    $size: 24px;
+    $this: &;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: $bg_grey;
+    width: $size;
+    height: $size;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    &__check{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s ease-in-out;
+        opacity: 0;
+    }
+   
+    &__input{
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0%;
+
+        &:checked ~ #{$this}__check{
+            opacity: 1;
+        }
+        
+    }
+}
