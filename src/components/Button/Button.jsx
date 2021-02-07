@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Button.scss'
 import { Link } from 'react-router-dom'
 
-const Button = ({icon, path, link, className, children, dark, whiteText, noPaddig, fullWidth, border}) => {
+const Button = ({icon, path, link, className, children, dark, whiteText, noPaddig, fullWidth, border, onClick, type}) => {
     const classes = classNames(
         'btn',  
         {'btn--dark': dark},
@@ -17,17 +17,20 @@ const Button = ({icon, path, link, className, children, dark, whiteText, noPaddi
         {'btn--fullWidth': fullWidth},
         className
     )
-        const iconContent = (icon && <FontAwesomeIcon className="btn__icon" icon={icon} />)
-        const textCotent = ( children && children)
+    const iconContent = (icon && <FontAwesomeIcon className="btn__icon" icon={icon} />)
+    const textCotent = ( children && children)
+    const handlerClick = (e) => {
+        onClick && onClick(e)
+    }
 
     return (
         <>     
         {
         link ?
-        <Link to={path} className={classes}>
+        <Link onClick={handlerClick} to={path} className={classes}>
             {textCotent}{iconContent}
         </Link>
-        : <button  className={classes}>
+        : <button type={type} onClick={handlerClick} className={classes}>
             {textCotent}{iconContent}
         </button>
         }
@@ -53,7 +56,8 @@ Button.propTypes = {
     link: PropTypes.bool,
     path: PropTypes.string,
     whiteText: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    type: PropTypes.string
 }
 
 export default Button

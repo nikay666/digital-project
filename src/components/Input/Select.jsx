@@ -1,21 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Select = ({placeholder, name, required, value}) => {
+const Select = ({placeholder, name, required, options, onChange}) => {
     return (
         <select 
             name={name} 
             className='textField__input'
             defaultValue="placeholder"
-            required 
+            onChange={onChange}
+            required={required}
         >
             <option value="placeholder" disabled>{placeholder}</option>
             {
-                value && value.map((item) => (
-                    <option key={item.id} value={value}>{item.text}</option>
+                options && options.map((item) => (
+                    <option key={item.id} value={item.value}>{item.text}</option>
                 ))
             }
         </select> 
+
     )
 }
 
@@ -23,7 +25,8 @@ Select.propTypes = {
     placeholder: PropTypes.string, 
     name: PropTypes.string, 
     required: PropTypes.bool,
-    value: PropTypes.arrayOf(PropTypes.object)
+    options: PropTypes.arrayOf(PropTypes.object),
+    onChange: PropTypes.func
 }
 
 export default Select

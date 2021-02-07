@@ -1,15 +1,23 @@
 import Select from "./Select"
 
-export const getTypeTemplate = (type, required, placeholder, name, value) => {
+export const getTypeTemplate = (type, required, placeholder, name, onChange, options) => {
     let res
      if(type === 'select'){
-        res = <Select name={name} required placeholder={placeholder} value={value} />
+        res = <Select  
+            name={name} 
+            placeholder={placeholder}
+            options={options}
+            onChange={onChange}
+            required={required}
+        />
      }else if(type === 'textarea'){
         res = <textarea 
             name={name} 
             id={name} 
             placeholder={placeholder}
             className="textField__input"
+            onChange={onChange}
+            required={required}
         ></textarea>
      }else{
         res = <input 
@@ -19,6 +27,7 @@ export const getTypeTemplate = (type, required, placeholder, name, value) => {
             className="textField__input"
             placeholder={placeholder}
             required={required}
+            onChange={onChange}
         />
      }
      return res

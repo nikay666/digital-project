@@ -2,6 +2,7 @@
 .textField{
     position: relative;
     width: 100%;
+    transition: 0.3s ease-in-out;
 
     &__label{
         opacity: 0;
@@ -19,6 +20,13 @@
             font-size: 0.875rem;
             color: $text_dark_grey;
         }
+    }
+
+    &__error{
+        display: block;
+        margin-top: 5px;
+        color: $error;
+        font-weight: bold;
     }
 
 }

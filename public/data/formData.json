@@ -19,7 +19,7 @@
     {
         "type": "select",
         "placeholder": "Интересующий товар/услуга",
-        "name": "Interested",
+        "name": "select",
         "value": [
             {
                 "id": 0,
