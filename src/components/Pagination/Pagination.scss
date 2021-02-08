@@ -1,0 +1,29 @@
+@import '../../var.scss';
+.pagination{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    &--col{
+        flex-direction: column;
+        gap:  80px;
+    }
+    &__btns{
+        display: flex;
+        gap: 20px;
+    }
+
+    &__numbers{
+        display: flex;
+        gap: 12px;
+        font-size: 1.5rem;
+        color: $text_hint;
+
+        span{
+            transition: 0.3s ease-in-out;
+            &.active{
+                color: $text_dark;
+            }
+        }
+    }
+}

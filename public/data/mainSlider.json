@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "title": "img1",
+        "img": "/assets/mainSlider/img1.jpg",
+        "url": "/projects"
+    },
+    {
+        "id": 1,
+        "title": "img2",
+        "img": "/assets/mainSlider/img2.jpeg",
+        "url": "/projects"
+    }
+]
