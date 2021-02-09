@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Button } from '../components/Button'
 
 const frame = (
@@ -34,10 +33,6 @@ const ContactsPage = ({contacts}) => {
                 </div>
             </main>
     )
-}
-
-ContactsPage.propTypes = {
-
 }
 
 export default ContactsPage

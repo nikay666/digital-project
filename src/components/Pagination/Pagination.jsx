@@ -9,12 +9,12 @@ const formatPaginationNumber = (num) => {
     return num
 }
 
-const Pagination = ({thisPage, totalPage, type, onClick}) => {
+const Pagination = ({thisPage, totalPage, type, count, onClick}) => {
     const setNext = () => {
-        onClick(1)
+        onClick(count)
     }
     const setPrev = () => {
-        onClick(-1)
+        onClick(-count)
     }
     return (
        <div className={classNames('pagination', {[`pagination--${type}`]: type})}>

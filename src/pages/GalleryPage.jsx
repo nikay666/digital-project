@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useFetch } from '../hooks'
-import { Gallery } from '../components/Gallery'
+import { Slider } from '../components/Slider'
 
 
 const url = '/data/galleryPage.json'
@@ -13,14 +12,10 @@ const GalleryPage = () => {
         <main className='main container'>
             <h1 className='h1'>ГАЛЕРЕЯ<br/><span className='h1__bold'>ФОТОГРАФИЙ</span></h1>
             {
-                galleryItems && <Gallery items={galleryItems} />
+                galleryItems &&  <Slider slidesType='gallery' slides={galleryItems}/>
             }
         </main>
     )
-}
-
-GalleryPage.propTypes = {
-
 }
 
 export default GalleryPage

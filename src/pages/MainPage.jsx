@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Card } from '../components/Card'
 import { Tasks } from '../components/Tasks'
 import { MiniGallery } from '../components/MiniGallery'
@@ -8,7 +7,6 @@ import { Form } from '../components/Form'
 
 import imgContactForm from '../assets/img/form.jpg'
 import { Slider } from '../components/Slider'
-import { useFormik } from 'formik'
 
 const galleeryUrl = '/data/gallery.json'
 const tasksUrl  = '/data/task.json'
@@ -28,6 +26,7 @@ const MainPage = () => {
                 type='imgs'
                 slides={slides}
                 className='main-slider'
+                slidesType='col'
             >
                 <h1 className='h1'>PROJECT<br/><span className='h1__bold'>NURTOWN</span></h1>
             </Slider>
@@ -63,8 +62,5 @@ const MainPage = () => {
 }
 
 
-MainPage.propTypes = {
-
-}
 
 export default MainPage

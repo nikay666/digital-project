@@ -1,74 +1,85 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { Pagination } from '../Pagination'
+import SliderCol from './SliderCol'
+import SliderList from './SliderList'
 import './Slider.scss'
-import { Button } from '../Button'
+import SliderGallery from './SliderGallery'
+import { getGroups } from './sliderUtil'
 
-const Slider = ({slides, type, className, children}) => {
+
+
+
+const Slider = ({slides, className, slidesType, slidesCount, children}) => {
     const [active, setActive] = useState(0)
+    const groups = getGroups(slidesType, slides)
+    
     const handlerClick = (n) => {
-        if(active + n > slides.length - 1){
+        if(active + n > groups.length - 1){
             setActive(0)
+
         }else if(active + n < 0){
-            setActive(slides.length - 1)
+            setActive(groups.length + n )
+
         }else{
             setActive(active + n)
         }
     }
 
-    const slideList = (
-        slides.map((slide, index) =>  (
-            <div 
-                key={slide.id} 
-                className={classNames('slider__slide', {'active': active === index})}
-            >
-                <img className='slider__img' src={slide.img} alt=""/>
-            <Button 
-               to={slide.url} 
-                icon='arrow-right'
-               className="slider__btn"
-            >Взглянуть</Button>
-            </div>
-        ))
-    )
+    const contentOfType = () => { 
+        let res 
+        switch (slidesType) {
+            case 'col':
+                res = <SliderCol 
+                    handlerClick={handlerClick}
+                    active={active}
+                    slides={groups}
+                    count={slidesCount}
+                >{children}</SliderCol>   
+                break;
+            case 'list': 
+                res =  <SliderList
+                    handlerClick={handlerClick}
+                    active={active}
+                    slides={groups}
+                    count={slidesCount}
+
+                />
+                break
+            case 'gallery': 
+                res = <SliderGallery
+                    handlerClick={handlerClick}
+                    active={active}
+                    slides={groups}
+                    count={slidesCount}
+                />
+                break
+            default:
+                break;
+        }
+        return res
+    }
 
     return (
-        <div className={(classNames('slider', `slider--${type}`, className))}>
-            <div className="slider__content">
-                {
-                    children && <div className="slider__col">
-                        {children}
-                        <Pagination 
-                            type='col'
-                            onClick={handlerClick}
-                            thisPage={active + 1}
-                            totalPage={slides.length}
-                        />
-                    </div>
-                }
-                {
-                    children 
-                    ? <div className="slider__col">{slideList}</div>
-                    : slideList
-                }
-            </div>
-            {
-                !children && <Pagination 
-                    type='col'
-                    onClick={handlerClick}
-                    thisPage={active + 1}
-                    totalPage={slides.length}
-                />
-            }
+        <div className={(classNames('slider', `slider--${slidesType}`, className))}>
+            {contentOfType()}
         </div>
     )
+}
+
+Slider.defaultProps = {
+    slides: [],
+    type: '',
+    slidesType: 'list',
+    slidesCount: 1
 }
 
 Slider.propTypes = {
     slides: PropTypes.arrayOf(PropTypes.object),
     type: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    slidesType: PropTypes.string,
+    slidesCount: PropTypes.number
 }
 
 export default Slider

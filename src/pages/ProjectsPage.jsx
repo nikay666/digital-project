@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Card } from '../components/Card'
 import { useFetch } from '../hooks'
 
@@ -27,10 +26,6 @@ const ProjectsPage = props => {
             </div>
         </main>
     )
-}
-
-ProjectsPage.propTypes = {
-
 }
 
 export default ProjectsPage
