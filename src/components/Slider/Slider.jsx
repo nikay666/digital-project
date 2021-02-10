@@ -8,6 +8,11 @@ import SliderGallery from './SliderGallery'
 import { getGroups } from './sliderUtil'
 
 
+const sliderTemplates = {
+    col: SliderCol,
+    list: SliderList,
+    gallery: SliderGallery
+}
 
 
 const Slider = ({slides, className, slidesType, slidesCount, children}) => {
@@ -25,39 +30,15 @@ const Slider = ({slides, className, slidesType, slidesCount, children}) => {
             setActive(active + n)
         }
     }
-
+ 
     const contentOfType = () => { 
-        let res 
-        switch (slidesType) {
-            case 'col':
-                res = <SliderCol 
-                    handlerClick={handlerClick}
-                    active={active}
-                    slides={groups}
-                    count={slidesCount}
-                >{children}</SliderCol>   
-                break;
-            case 'list': 
-                res =  <SliderList
-                    handlerClick={handlerClick}
-                    active={active}
-                    slides={groups}
-                    count={slidesCount}
-
-                />
-                break
-            case 'gallery': 
-                res = <SliderGallery
-                    handlerClick={handlerClick}
-                    active={active}
-                    slides={groups}
-                    count={slidesCount}
-                />
-                break
-            default:
-                break;
-        }
-        return res
+        return sliderTemplates[slidesType]({
+            handlerClick: handlerClick,
+            active: active,
+            slides: groups,
+            count: slidesCount,
+            children: children
+        })
     }
 
     return (

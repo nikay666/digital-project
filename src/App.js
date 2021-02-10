@@ -11,6 +11,7 @@ import { Footer } from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowLeft, faArrowRight, faCheck, faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faLinkedinIn, faPinterestP, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import SinglePage from './pages/SinglePage';
 
 library.add(faMapMarkerAlt, faPhone, faEnvelope, faFacebookF, faTwitter, faLinkedinIn, faPinterestP, faArrowRight, faArrowLeft, faCheck )
 
@@ -86,6 +87,7 @@ const socialList = [
 ]
 
 
+
 function App() {
   return (
     <Router>
@@ -97,6 +99,7 @@ function App() {
           <Route exact path='/projects' component={ProjectsPage} />
           <Route exact path='/certificates' component={CertificatesPage} />
           <Route exact path='/contacts' render={(props) => <ContactsPage contacts={contactList} />} />
+          <Route exact path='/singlepage' component={SinglePage} />
         </Switch>
         <Footer 
         navList={navList}
