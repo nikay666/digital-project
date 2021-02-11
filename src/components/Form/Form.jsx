@@ -56,7 +56,7 @@ const Form = () => {
                     />
                 
                     <TextField
-                        type='select'
+                        typeField='select'
                         name="select"
                         placeholder='Интересующий товар/услуга'
                         onChange={formik.handleChange}
@@ -81,7 +81,7 @@ const Form = () => {
                     />
 
                     <TextField
-                        type='textarea'
+                        typeField='textarea'
                         placeholder='Сообщение'
                         name='textarea'
                         className="textField__input"

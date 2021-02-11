@@ -1,19 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import SliderCol from './SliderCol'
-import SliderList from './SliderList'
+import { getGroups, sliderTemplates } from './sliderUtil'
 import './Slider.scss'
-import SliderGallery from './SliderGallery'
-import { getGroups } from './sliderUtil'
-
-
-const sliderTemplates = {
-    col: SliderCol,
-    list: SliderList,
-    gallery: SliderGallery
-}
-
 
 const Slider = ({slides, className, slidesType, slidesCount, children}) => {
     const [active, setActive] = useState(0)
@@ -52,7 +41,8 @@ Slider.defaultProps = {
     slides: [],
     type: '',
     slidesType: 'list',
-    slidesCount: 1
+    slidesCount: 1,
+    count:  1
 }
 
 Slider.propTypes = {
@@ -60,7 +50,8 @@ Slider.propTypes = {
     type: PropTypes.string,
     className: PropTypes.string,
     slidesType: PropTypes.string,
-    slidesCount: PropTypes.number
+    slidesCount: PropTypes.number,
+    count: PropTypes.number
 }
 
 export default Slider

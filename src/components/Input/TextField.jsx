@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import { getTypeTemplate } from './getTypeTemplate'
 import './TextField.scss'
 
-const TextField = ({type, required, placeholder, name, onChange, errors, options}) => {
-
-
+const TextField = ({typeField, type, required, placeholder, name, onChange, errors, options}) => {
     return (
         <div className='textField'>
             <label 
@@ -13,7 +11,7 @@ const TextField = ({type, required, placeholder, name, onChange, errors, options
                 className="textField__label"
             >{placeholder}</label>
             {
-                getTypeTemplate(type, required, placeholder, name, onChange, options)
+                getTypeTemplate(typeField, type, required, placeholder, name, onChange, options)
             }
             {
                 errors &&  <span className="textField__error">{errors}</span>
@@ -23,10 +21,12 @@ const TextField = ({type, required, placeholder, name, onChange, errors, options
     )
 }
 TextField.defaultProps = {
-    required: false
+    required: false,
+    typeField: 'input'
 }
 
 TextField.propTypes = {
+    typeField: PropTypes.string,
     type: PropTypes.string, 
     placeholder: PropTypes.string, 
     name: PropTypes.string,
