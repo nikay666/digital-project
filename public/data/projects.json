@@ -3,7 +3,7 @@
         "id": 0,
         "title": "Общеобразовательная школа",
         "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ut officia, architecto expedita nostrum magnam explicabo eos delectus illo. Dicta error, consequatur facere recusandae nisi voluptates ex repellendus exercitationem odio!",
-        "btnContent": "смотреть",
+        "link": "school",
         "media": [
             {
                 "url": "/assets/projects/school.jpg",
@@ -15,7 +15,7 @@
         "id": 1,
         "title": "Паркинг на 500 автомобилей",
         "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ut officia, architecto expedita nostrum magnam explicabo eos delectus illo. Dicta error, consequatur facere recusandae nisi voluptates ex repellendus exercitationem odio!",
-        "btnContent": "смотреть",
+        "link": "parking",
         "media": [
             {
                 "url": "/assets/projects/parking.jpg",
@@ -27,7 +27,7 @@
         "id": 2,
         "title": "Проект интерьера офиса",
         "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ut officia, architecto expedita nostrum magnam explicabo eos delectus illo. Dicta error, consequatur facere recusandae nisi voluptates ex repellendus exercitationem odio!",
-        "btnContent": "смотреть",
+        "link": "office",
         "media": [
             {
                 "url": "/assets/projects/office.jpg",

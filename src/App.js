@@ -100,6 +100,7 @@ function App() {
           <Route exact path='/certificates' component={CertificatesPage} />
           <Route exact path='/contacts' render={(props) => <ContactsPage contacts={contactList} />} />
           <Route exact path='/singlepage' component={SinglePage} />
+          <Route exact path="/projects/:link" component={SinglePage} />
         </Switch>
         <Footer 
         navList={navList}

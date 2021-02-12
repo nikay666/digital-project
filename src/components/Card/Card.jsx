@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { Button } from '../Button'
 import './Card.scss'
 
-const Card = ({title, titleType, text, media, btnContent}) => {
+const Card = ({title, titleType, text, media, link}) => {
     const titleHtml = ( 
         titleType === 2 
         ? <h2 className="h2 card__title">{title}</h2> 
@@ -36,12 +36,13 @@ const Card = ({title, titleType, text, media, btnContent}) => {
             <div className="card__content">
                 {titleHtml}
                 <p className="card__text">{text}</p>
+
                 <Button 
                     link 
-                    path='/contacts' 
+                    path={`/projects/${link}`} 
                     className='card__btn'
                     icon='arrow-right'
-                >{btnContent}</Button>
+                >Смотреть</Button>
             </div>
         </div>
     )
@@ -49,15 +50,14 @@ const Card = ({title, titleType, text, media, btnContent}) => {
 
 Card.defaultProps = {
     titleType: 3,
-    btnContent: PropTypes.string,
-    media: []
+    media: [],
 }
 
 Card.propTypes = {
     title: PropTypes.string,
     titleType: PropTypes.number,
-    btnContent: PropTypes.string,
-    media: PropTypes.arrayOf(PropTypes.object)
+    media: PropTypes.arrayOf(PropTypes.object),
+    link: PropTypes.string
 }
 
 export default Card
