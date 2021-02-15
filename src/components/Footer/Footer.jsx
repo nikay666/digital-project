@@ -7,8 +7,8 @@ import { List } from '../List'
 
 const Footer = ({navList, contactList, socialList}) => {
     return (
-        <footer className='footer container'>
-            <div className="footer__top">
+        <footer className='footer'>
+            <div className="footer__top container">
                 <div className="footer__item">
                     <Logo type='light' />
                 </div>
@@ -26,7 +26,7 @@ const Footer = ({navList, contactList, socialList}) => {
                     <List list={socialList} icons type='list' />
                 </div>
             </div>
-            <div className="footer__bottom">
+            <div className="footer__bottom container">
                 <p className="footer__copy">
                     © 2019 Digital Project. Все права защищены.
                 </p>

@@ -8,3 +8,11 @@
     font-size: $font_size;
     font-weight: $font_weight;
 }
+
+@mixin getContainerSizes($mapContainer){
+    @each $view, $container in $mapContainer {
+        @media (max-width: $view) {
+            width: $container;
+        }
+    }
+}

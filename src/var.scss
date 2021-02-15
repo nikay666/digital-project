@@ -11,3 +11,27 @@ $bg_white: #E5E5E5;
 $bg_grey: #F2F2F2;
 $bg_grey_light: #FBFBFB;
 $bg_dark: #2C2C2C;
+
+
+//container sizes
+$screen_xxl: 1400px;
+$screen_xl: 1200px;
+$screen_l: 992px;
+$screen_md: 768px;
+$screen_sm: 576px;
+
+$container_xxl: 1320px;
+$container_xl: 1140px;
+$container: 960px;
+$container_md: 720px;
+$container_sm: 540px;
+$container_fluid: 100%;
+
+$mapContainer: (
+    $screen_xxl: $container_xl,
+    $screen_xl: $container,
+    $screen_l:  $container_md, 
+    $screen_md: $container_sm, 
+    $screen_sm: $container_fluid
+);
+
