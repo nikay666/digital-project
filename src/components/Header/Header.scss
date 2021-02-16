@@ -5,12 +5,37 @@
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    
-    &__logo{
+    z-index: 100;
 
+    &__btn{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        outline: none;
     }
-    &__nav{
 
+    @media (max-width: $screen_md) {
+        &__nav{
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+
+            &.active{
+                opacity: 1;
+                visibility: visible;
+                top: 0;
+                left: 0;
+                right: 0;
+                position: fixed;
+            }
+            
+        }
+        &__btn{
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+         
+        }
     }
 }
 

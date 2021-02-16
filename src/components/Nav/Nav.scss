@@ -2,6 +2,8 @@
 @import '../../mixins.scss';
 .nav{
     $this: &;
+
+
     &__list{
         display: flex;
         list-style: none;
@@ -23,8 +25,12 @@
     }
 
     &--header{
+       
         #{$this}__list{
-            gap: 40px;
+            gap: 5px 5%;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex-grow: 1;
         }
         #{$this}__item{
             &:hover{
@@ -36,6 +42,27 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
         }
+        @media (max-width: $screen_md) {
+            #{$this}__list{
+                flex-direction: column;
+                align-items: center;
+                padding: 10%;
+                background: white;
+                box-shadow: 0 0 5px rgba($text_dark, 0.5);
+
+                transform: translateY(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            #{$this}__link{
+                font-size: 2rem;
+            }
+            &.active{
+                #{$this}__list{
+                    transform: translateY(0);
+                }
+            }
+        }
+   
     }
     &--footer{
         #{$this}__list{

@@ -1,0 +1,61 @@
+@import '../../var.scss';
+.burger-btn{
+    $this: &;
+    $height:  0.35rem;
+
+    width: 3rem;
+    height: 2rem;
+    // position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+
+    &::before, &::after{
+        content: '';
+    }
+
+    &__line, &::before, &::after{
+        display: block;
+        position: absolute;
+        height: 0.35rem;
+        width: 100%;
+        left: 0;
+        border-radius: 4px;
+        background: $bg_dark;
+        transition: 0.3s ease-in-out;
+
+    }
+    &__line{
+        top: calc(50% - #{$height} / 2)
+    }
+    &::before{
+        top: 0;
+    }
+    &::after{
+        top: calc(100% - #{$height})
+    }
+
+    &.active{
+        #{$this}__line{
+            top: 50%;
+            transform: rotate(-45deg);
+        }
+        &::before{
+            top: 50%;
+            transform: rotate(-45deg);
+        }
+        &::after{
+            top: 50%;
+            transform: rotate(45deg);
+        }
+    }
+
+    @media (max-width: $screen_sm) {
+        width: 4rem;
+        height: 3rem;
+        &__line, &::before, &::after{
+            height: 0.5rem;
+        }
+    }
+}
