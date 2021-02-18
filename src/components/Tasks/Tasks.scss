@@ -22,4 +22,9 @@
         color: $text_dark;
         font-size: 1.375rem;
     }
+    @media (max-width: $screen_xl) {
+        &__text{
+            font-size: 1rem;     
+        }     
+    }
 }

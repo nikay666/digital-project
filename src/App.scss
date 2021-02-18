@@ -28,9 +28,19 @@
 }
 .h2{
   @include titles(4rem, $text_hint, 300 );
+
+  @media (max-width: $screen_l) {
+    font-size: 3rem;
+  }
+  @media (max-width: $screen_sm) {
+    font-size: 2rem;
+  }
 }
 .h3{
 @include titles(2.5rem, $text_hint, lighter );
+  @media (max-width: $screen_l) {
+    font-size: 2rem;
+  }
 }
 
 .projects{

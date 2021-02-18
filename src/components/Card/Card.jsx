@@ -14,11 +14,11 @@ const Card = ({title, titleType, text, media, link}) => {
 
     return (
         <div className={classNames('card')}>
-            <div className="card__media">
+            {/* <div className="card__media"> */}
                 {
                     media.length > 1 
                     ? (
-                        <div className="card__imgs">
+                        <div className="card__media">
                             {
                                 media.map(item => (
                                     <div key={item.id} className="card__img">
@@ -32,7 +32,7 @@ const Card = ({title, titleType, text, media, link}) => {
                         <img  src={media[0].url} alt={media[0].alt}/>
                     </div>
                 }
-            </div>
+            {/* </div> */}
             <div className="card__content">
                 {titleHtml}
                 <p className="card__text">{text}</p>
