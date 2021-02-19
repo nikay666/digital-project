@@ -12,18 +12,19 @@
         color: $text_white;
         font-weight: bold;
         font-size: 1rem;
-        margin-bottom: 25px;
+        margin-bottom: 1rem;
     }
 
     &__item{
-        max-width: 25%;
+        flex-basis: 25%;
     }
     &__top{
         position: relative;
-        padding: 50px 0;
+        padding-top: 50px;
+        padding-bottom: 50px ;
         display: flex;
         justify-content: space-evenly;
-        gap: 100px;
+        gap: 5vw;
         &::before{
             content: '';
             position: absolute;
@@ -36,11 +37,46 @@
         }
     }
     &__bottom{
-        padding: 25px 0;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 
     &__copy{
         color: $text_hint;
         font-size: 0.875rem;
+    }
+    @media (max-width: $screen_md) {
+        &__top{
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        &__item{
+           flex-basis: 45%;
+
+            &:first-child{
+                order: 4;
+                width: 40%;
+            }
+        }
+    }
+    @media (max-width: $screen_sm) {
+
+
+        &__title{
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        &__top{
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap:2rem;
+    
+        }
+        &__item{
+            flex-basis: 100%;
+            width: 100%;
+       
+        }
     }
 }

@@ -1,20 +1,33 @@
 @import '../../var.scss';
+@import '../../mixins.scss';
+
+$gap: 30px;
+$gap_sm: 10px;
 .mini-gallery{
     display: flex;
+    width: 100%;    
     flex-direction: column;
     align-items: baseline;
-    gap: 60px;
-    margin-bottom: 60px;
+    gap: 2vh;
 
     &__content{
         display: flex;
+        width: 100%;   
         flex-wrap: wrap;
-        gap: 30px;
+        gap: $gap;
+
+        @media (max-width: $screen_l) {
+            gap: $gap_sm;
+        }
 
     }
     &__show-all{
         margin-left: auto;
+        @media (max-width: $screen_md) {
+            margin-left: 0;
+        }
     }
+    
 }
 
 
@@ -28,7 +41,7 @@
     gap: 15px;
     position: relative;
     height: 255px;
-    padding: 40px 60px;
+    padding: 3% 1.5%;
     overflow: hidden;
     z-index: 0;
     transition: 0.3s ease-in-out;
@@ -85,15 +98,39 @@
             opacity: 1;
         }
     }
+
+    $list:createListForGallery($gap);
+    @include miniGalleryLayout($list);
+    @media (max-width: $screen_xl) {
     
-    &:nth-of-type(5n + 3){
-        flex-basis: calc(25% - 15px);
+        &__title{
+            font-size: 2rem;
+        }
     }
-    &:nth-of-type(5n + 4){
-        flex-basis: calc(40% - 30px);
+    @media (max-width: $screen_l) {
+        flex-basis: calc(50% - #{$gap_sm} / 2);
+        $list_sm: createListForGallery($gap_sm);
+        @include miniGalleryLayout($list_sm);
+        &__title{
+            font-size: 2rem;
+        }
     }
-    &:nth-of-type(5n + 5){
-        flex-basis: calc(35% - 15px);
+    @media (max-width: $screen_md) {
+        &:nth-of-type(n){
+            flex-basis: calc(50% - #{$gap_sm} / 2);
+        }
+        &:nth-of-type(5n + 5){
+            flex-basis: 100%;
+        }
+        padding:  8% 5%;
+       
+    }
+    @media (max-width: $screen_sm) {
+        max-height: 130px;
+        &__title{
+            font-size: 1.2rem;
+        }
     }
 
 }
+

@@ -4,7 +4,8 @@
     text-decoration: none;
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 5%;
+    height: 100%;
 
     &__icon{
         margin-right: 20px;
@@ -27,6 +28,7 @@
     }
     &--col{
         flex-direction: column;
+        gap: 15px;
     }
 
     &--list{

@@ -14,6 +14,8 @@
         padding: 20px 14px;
         font-size: 0.875rem;
         color: $text_dark_grey;
+        border: 1px solid $text_dark;
+        background-color: white;
 
 
         &::placeholder{

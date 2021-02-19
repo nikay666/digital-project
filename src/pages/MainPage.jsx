@@ -50,7 +50,7 @@ const MainPage = () => {
                     <h2 className="h2">Связаться с нами</h2>
                     <Form/>
                 </div>
-                <div className="columns__col">
+                <div className="columns__col hide-mobile">
                     <div className="wrap wrap--center">
                         <img src={imgContactForm} alt=""/>
                     </div>

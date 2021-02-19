@@ -50,12 +50,4 @@
             transform: rotate(45deg);
         }
     }
-
-    @media (max-width: $screen_sm) {
-        width: 4rem;
-        height: 3rem;
-        &__line, &::before, &::after{
-            height: 0.5rem;
-        }
-    }
 }

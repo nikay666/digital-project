@@ -16,3 +16,18 @@
         }
     }
 }
+
+@function createListForGallery($gap) {
+    $res: 3 25% calc(#{$gap} / 2),
+        4 40% #{$gap},
+        5 35% calc(#{$gap} / 2);
+    @return $res;
+}
+
+@mixin miniGalleryLayout ($list){
+    @each $n, $percent, $gap in $list {
+        &:nth-of-type(5n + #{$n}){
+            flex-basis: calc(#{$percent} - #{$gap});
+        }
+    }
+}

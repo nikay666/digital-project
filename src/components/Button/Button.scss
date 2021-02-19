@@ -45,6 +45,9 @@
         #{$this}__icon{
             margin-left: 12px;
         }
+        @media (max-width: $screen_md) {
+            padding: 24px 35px;
+        }
     }
     &--fullWidth{
         width: 100%;

@@ -1,6 +1,6 @@
 @import '../../var.scss';
 .tasks{
-
+    $this: &;
     &__content{
         display: flex;
         justify-content: space-between;
@@ -27,4 +27,29 @@
             font-size: 1rem;     
         }     
     }
+    @media (max-width:  $screen_md) {
+        &__task{
+            width: 100%;
+            justify-content: space-between;
+        }
+     
+        &__text{
+            font-size: 1.375rem;
+            flex-basis: 80%;
+        }
+    }
+
+    @media (max-width: $screen_sm) {
+        &__text{
+            font-size: 1rem;
+        
+        }
+        &__number{
+            font-size: 6rem;   
+        }
+        &__task{
+            gap: 10px;
+        }
+    }
+    
 }
