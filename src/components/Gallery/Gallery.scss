@@ -3,14 +3,19 @@
 .gallery{
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 1vw;
     justify-content: flex-start;
 
     &__card{
-        flex-basis: calc(100% / 5 - 30px);
+        flex-basis: calc(100% / 5 - 1vw);
         height: 260px;
         cursor: pointer;
+
+        @media (max-width: $screen_l) {
+            height: 200px;
+        }
     }
+  
 }
 
 .g-card{

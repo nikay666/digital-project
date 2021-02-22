@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Button.scss'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Button = ({icon, path, link, className, children, dark, whiteText, noPaddig, fullWidth, border, onClick, type}) => {
     const classes = classNames(

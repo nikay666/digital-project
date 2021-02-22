@@ -76,8 +76,17 @@
 
   @media (max-width: $screen_l) {
     justify-content: center;
+
     &__col.hide-mobile{
       display: none;
+    }
+    &--map{
+        flex-direction: column;
+        #{$this}__col{
+          &:last-child{
+            height: 40vh;
+          }
+        }
     }
   }
 }
@@ -103,7 +112,7 @@
 }
 
 .contacts{
-  padding-left: 130px;
+  // padding-left: 130px;
 }
 
 .info-block{

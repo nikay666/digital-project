@@ -13,23 +13,25 @@ const ContactsPage = ({contacts}) => {
 
 
     return (
-            <main className="main contacts columns">
-                <div className="columns__col">
-                    <h1 className='h1'>КОНТАКТНАЯ<br/><span className='h1__bold'>ИНФОРМАЦИЯ</span></h1>
-                    <div className="info-block">
-                        <p className="info-block__title">"Digital Project"</p>
-                        {
-                            contacts.map(item => (
-                                <a key={item.id} href={item.link} className="info-block__link">{item.text}</a>
-                            ))
-                        }
+            <main className="main">
+                <div className="contacts container columns columns--map">
+                    <div className="columns__col">
+                        <h1 className='h1'>КОНТАКТНАЯ<br/><span className='h1__bold'>ИНФОРМАЦИЯ</span></h1>
+                        <div className="info-block">
+                            <p className="info-block__title">"Digital Project"</p>
+                            {
+                                contacts.map(item => (
+                                    <a key={item.id} href={item.link} className="info-block__link">{item.text}</a>
+                                ))
+                            }
+                        </div>
+                        <Button
+                            dark
+                        >обратная связь</Button>
                     </div>
-                    <Button
-                        dark
-                    >обратная связь</Button>
-                </div>
-                <div className="columns__col">
-                    {frame}
+                    <div className="columns__col">
+                        {frame}
+                    </div>
                 </div>
             </main>
     )
