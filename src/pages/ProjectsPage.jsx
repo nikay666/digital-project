@@ -9,7 +9,7 @@ const ProjectsPage = props => {
     const projects = useFetch(url)
     
     return (
-        <main className='main container'>
+        <main className='main container main--projects'>
             <h1 className='h1'>НАШИ<br/><span className='h1__bold'>ПРОЕКТЫ</span></h1>
             <div className="projects">
                 {
@@ -21,6 +21,7 @@ const ProjectsPage = props => {
                             text={item.text}
                             link={item.link}
                             media={item.media}
+                            className="projects"
                         />
                     ))
                 }
