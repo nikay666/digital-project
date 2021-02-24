@@ -19,6 +19,7 @@ const Header = ({list}) => {
                 type='header'
                 classes={classNames('header__nav', {'active': activeBtn})}  
                 list={list}
+                onClickLink={burgerMenuhandler}
             />  
             <BurgerBtn
                 onClick={burgerMenuhandler}
