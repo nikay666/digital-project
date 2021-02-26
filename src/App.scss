@@ -1,9 +1,9 @@
-@import './var.scss';
-@import './mixins.scss';
-@import './main-slider.scss';
-@import './singlePage.scss';
-@import  './infoBlock.scss';
-@import './columns.scss';
+@import './styles/var.scss';
+@import './styles/mixins.scss';
+@import './styles/mainSlider.scss';
+@import './styles/singlePage.scss';
+@import  './styles/infoBlock.scss';
+@import './styles/columns.scss';
 
 .App{
   min-height: 100vh;
