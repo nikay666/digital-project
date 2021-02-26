@@ -1,0 +1,29 @@
+.columns{
+    $this: &;
+    display: flex;
+    gap: 30px;
+  
+    &__col{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: baseline;
+    }
+  
+    @media (max-width: $screen_l) {
+      justify-content: center;
+  
+      &__col.hide-mobile{
+        display: none;
+      }
+      &--map{
+          flex-direction: column;
+          #{$this}__col{
+            &:last-child{
+              height: 40vh;
+            }
+          }
+      }
+    }
+  }

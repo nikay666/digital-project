@@ -1,0 +1,54 @@
+
+.main-slider{
+    @media (max-width: $screen_l) {
+      & .btn{
+        border-color: $bg_grey;
+        background-color: rgba($bg_clear_white, 0.9);
+        &:hover{
+          background-color: rgba($bg_grey, 0.9);
+        }
+      }
+      .slider{
+        &__col{
+          &:first-child{
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            background-color: rgba($bg_clear_white, 0.8);
+            padding: 2% 3%;
+            transform: translate(10%, -50%);
+          }
+          &:last-child{
+            width: 100%;
+          }
+        }
+    }
+  }
+  @media (max-width: $screen_md) {
+    .slider{
+      &__col{
+        gap: 40px;
+      }
+    }
+  }
+  @media (max-width: $screen_sm) {
+    .slider{
+      &__col{
+        &:first-child{
+          padding: 10%;
+        }
+      }
+    }
+  }
+  @media (max-width: $screen_xxs) {
+    .slider{
+      &__col{
+        &:first-child{
+          left: 3%;
+          top: 55%;
+        }
+      }
+    }
+  }
+
+}

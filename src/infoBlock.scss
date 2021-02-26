@@ -1,0 +1,27 @@
+.info-block{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 30px;
+  
+    &__title, &__link{
+      color: $text_dark;
+    }
+  
+    &__title{
+      font-size: 	1.125rem;
+      font-weight: bold;
+    }
+  
+    &__link{
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+      border-bottom: 1px solid transparent;
+      
+      &:hover{
+        border-bottom: 1px solid $text_dark;
+      }
+    }
+  }
+  

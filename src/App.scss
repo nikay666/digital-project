@@ -1,5 +1,10 @@
 @import './var.scss';
 @import './mixins.scss';
+@import './main-slider.scss';
+@import './singlePage.scss';
+@import  './infoBlock.scss';
+@import './columns.scss';
+
 .App{
   min-height: 100vh;
   display: flex;
@@ -64,35 +69,6 @@
   height: 100%; 
   border:0;
 }
-.columns{
-  $this: &;
-  display: flex;
-  gap: 30px;
-
-  &__col{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: baseline;
-  }
-
-  @media (max-width: $screen_l) {
-    justify-content: center;
-
-    &__col.hide-mobile{
-      display: none;
-    }
-    &--map{
-        flex-direction: column;
-        #{$this}__col{
-          &:last-child{
-            height: 40vh;
-          }
-        }
-    }
-  }
-}
 
 .contact-form{
   max-width: 400px;
@@ -115,88 +91,4 @@
 }
 
 
-.info-block{
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  gap: 30px;
 
-  &__title, &__link{
-    color: $text_dark;
-  }
-
-  &__title{
-    font-size: 	1.125rem;
-    font-weight: bold;
-  }
-
-  &__link{
-    font-size: 1rem;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    border-bottom: 1px solid transparent;
-    
-    &:hover{
-      border-bottom: 1px solid $text_dark;
-    }
-  }
-}
-
-
-.page{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px;
-
-  &__preview{
-    width: 100%;
-    max-height: 400px;
-    overflow: hidden;
-
-    img{
-      object-fit: cover;
-      width: 100%;
-    }
-  }
-  &__content{
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  &__text{
-    max-width: 60%;
-  }
-  &__img{
-    max-width: calc(40% - 30px);
-    overflow: hidden;
-    display: block;
-
-    &:nth-child(2n + 1){
-      width: 100%;
-      max-width: 100%;
-    }
-    img{
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
-  @media (max-width: $screen_md) {
-    &__img{
-      width: 100%;
-      max-width: 100%;
-      max-height: 400px;
-      &:nth-child(2n + 1){
-        max-height: none;
-      }
-    }
-    &__text{
-      max-width: 100%;
-    }
-  }
-}
