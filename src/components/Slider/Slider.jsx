@@ -1,12 +1,23 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { getGroups, sliderTemplates } from './sliderUtil'
+import { getGroups, NUM_IMG_IN_GAL, NUM_IMG_IN_GAL_MD, NUM_IMG_IN_GAL_SM, sliderTemplates } from './sliderUtil'
 import './Slider.scss'
+import { useMedia } from '../../hooks'
 
 const Slider = ({slides, className, slidesType, slidesCount, children}) => {
     const [active, setActive] = useState(0)
-    const groups = getGroups(slidesType, slides)
+    const [count, setCount] = useState(NUM_IMG_IN_GAL)
+    const phoneMedia = useMedia('phone')
+    const tabletMedia  = useMedia('tablet')
+    const groups = getGroups(slidesType, slides, count)
+
+    useEffect(() =>  {
+        setCount(NUM_IMG_IN_GAL)
+        if(tabletMedia) setCount(NUM_IMG_IN_GAL_MD)
+        if(phoneMedia) setCount(NUM_IMG_IN_GAL_SM)
+    }, [phoneMedia, tabletMedia])
+
     
     const handlerClick = (n) => {
         if(active + n > groups.length - 1){

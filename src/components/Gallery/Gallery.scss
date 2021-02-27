@@ -14,8 +14,17 @@
         @media (max-width: $screen_l) {
             height: 200px;
         }
+        @media (max-width: $screen_md) {
+            flex-basis: calc(100% / 4 - 1vw);
+            width: calc(100% / 4 - 1vw);
+        }
+    
+        @media (max-width: $screen_sm) {
+            flex-basis: calc(100% / 2 - 1vw);
+            width: calc(100% / 2 - 1vw);
+            height: 35vh;
+        }
     }
-  
 }
 
 .g-card{

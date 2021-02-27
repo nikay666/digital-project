@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import GalleryCard from './GalleryCard'
@@ -6,6 +6,7 @@ import './Gallery.scss'
 
 
 const Gallery = ({items, className=''}) => {
+
     return (
         <div className={classNames("gallery", className)}>
         {
