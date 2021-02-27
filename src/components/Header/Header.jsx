@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import './Header.scss'
 import { Nav } from '../Nav'
 import { Logo } from '../Logo'
 import classNames from 'classnames'
 import { BurgerBtn } from '../BurgerBtn'
+import { useMedia } from '../../hooks'
 
 const Header = ({list}) => {
     const [activeBtn, setActiveBtn ] = useState(false)
+    const activeMedia = useMedia('tablet') 
+
+    useEffect(() => {
+        setActiveBtn(false)
+    }, [activeMedia])
 
     const burgerMenuhandler = () => {
         setActiveBtn(!activeBtn)
