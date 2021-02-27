@@ -1,6 +1,6 @@
 import React from 'react'
 import { Slider } from '../components/Slider'
-import { useFetch } from '../hooks'
+import { useFetch, useMedia } from '../hooks'
 
 
 const certificateUrl = '/data/certificates.json'
@@ -8,6 +8,7 @@ const certificateUrl = '/data/certificates.json'
 const CertificatesPage = props => {
     const certificateList = useFetch(certificateUrl)
     console.log(certificateList)
+    const phoneMedia = useMedia('phone')
 
     return (
         <main className='main container'>
@@ -15,8 +16,7 @@ const CertificatesPage = props => {
             <Slider
                 slides={certificateList}
                 slidesType='list'
-                slidesCount={3}
-
+                slidesCount={phoneMedia ? 1 : 3}
             />
         </main>
     )

@@ -5,8 +5,9 @@ import './Pagination.scss'
 import { Button } from '../Button'
 
 const formatPaginationNumber = (num) => {
-    if(num < 10) return `0${num}`
-    return num
+    const res = Math.round(num) 
+    if(res < 10) return `0${res}`
+    return res
 }
 
 const Pagination = ({thisPage, totalPage, type, count, onClick}) => {
