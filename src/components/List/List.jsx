@@ -18,7 +18,12 @@ const List = ({list, icons=false, color='light', type='col'}) => {
         {
             list.map((item) => (
                 <li className='list__item' key={item.id}>
-                    <a href={item.link} className='list__link'>
+                    <a 
+                        href={item.link} 
+                        target='_blank'
+                        rel="noreferrer"
+                        className='list__link'
+                    >
                     {
                         icons && <FontAwesomeIcon className='list__icon' icon={item.icon} />
                     }

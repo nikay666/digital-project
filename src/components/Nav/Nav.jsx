@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 const Nav = ({list, type, classes, onClickLink}) => {
+
     return (
         <nav className={classNames("nav", `nav--${type}`, classes)}>
         <ul className='nav__list'>
@@ -28,13 +29,13 @@ const Nav = ({list, type, classes, onClickLink}) => {
 Nav.defaultProps = {
     list: {},
     type: 'header',
-    classes: ''
+    classes: '',
 }
 
 Nav.propTypes = {
     list: PropTypes.arrayOf(PropTypes.object),
     type: PropTypes.string,
-    classes: PropTypes.string
+    classes: PropTypes.string,
 }
 
 export default Nav

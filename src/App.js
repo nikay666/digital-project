@@ -66,22 +66,22 @@ const socialList = [
   { 
     id: 0,
     icon: ['fab','facebook-f'],
-    link: 'htpps://facebook.com',
+    link: 'https://facebook.com',
   },
   { 
     id: 1,
     icon: ['fab','twitter'],
-    link: 'htpps://twitter.com'
+    link: 'https://twitter.com'
   },
   { 
     id: 2,
     icon: ['fab', 'linkedin-in'],
-    link: 'htpps://linkedin.com'
+    link: 'https://linkedin.com'
   },
   { 
     id: 3,
     icon: ['fab','pinterest-p'],
-    link: 'htpps://pinterest.com'
+    link: 'https://pinterest.com'
   }
 
 ]

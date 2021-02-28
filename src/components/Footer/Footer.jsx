@@ -18,7 +18,7 @@ const Footer = ({navList, contactList, socialList}) => {
                 </div>
                 <div className="footer__item">
                     <p className="footer__title">Контакты</p>
-                  <List list={contactList} icons/>
+                    <List list={contactList} icons/>
                     
                 </div>
                 <div className="footer__item">
@@ -31,7 +31,6 @@ const Footer = ({navList, contactList, socialList}) => {
                     © 2019 Digital Project. Все права защищены.
                 </p>
             </div>
-
         </footer>
     )
 }

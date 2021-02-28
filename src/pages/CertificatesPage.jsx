@@ -7,7 +7,6 @@ const certificateUrl = '/data/certificates.json'
 
 const CertificatesPage = props => {
     const certificateList = useFetch(certificateUrl)
-    console.log(certificateList)
     const phoneMedia = useMedia('phone')
 
     return (
