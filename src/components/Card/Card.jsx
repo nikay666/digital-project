@@ -13,7 +13,7 @@ const Card = ({title, titleType, text, media, link, className = ''}) => {
     )
 
     return (
-        <div className={classNames('card', `card--${className}`)}>
+        <div className={classNames('card', {[`card--${className}`]: className})}>
                 {
                     media.length > 1 
                     ? (
@@ -36,8 +36,8 @@ const Card = ({title, titleType, text, media, link, className = ''}) => {
                 <p className="card__text">{text}</p>
 
                 <Button 
-                    link 
-                    path={`/projects/${link}`} 
+                    link
+                    path={`/${link}`} 
                     className='card__btn'
                     icon='arrow-right'
                 >Смотреть</Button>
@@ -49,6 +49,7 @@ const Card = ({title, titleType, text, media, link, className = ''}) => {
 Card.defaultProps = {
     titleType: 3,
     media: [],
+    link: ''
 }
 
 Card.propTypes = {

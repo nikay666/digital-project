@@ -39,6 +39,7 @@ const MainPage = () => {
                     text={card[0].text}
                     btnContent='читать'
                     media={card[0].media}
+                    link='contacts'
                 />
             }
             <Tasks tasks={tasks} />

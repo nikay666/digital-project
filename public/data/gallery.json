@@ -3,30 +3,30 @@
         "id": 0,
         "title": "Досуговый центр",
         "url":  "/assets/gallery/pr1.jpg",
-        "link": "/dosug1"
+        "link": "/projects/leisure"
     },
     {
         "id": 1,
-        "title": "Досуговый центр",
-        "url":  "/assets/gallery/pr2.jpg",
-        "link": "/dosug2"
+        "title": "Проект интерьера офиса",
+        "url":  "/assets/gallery/pr2.jpeg",
+        "link": "/projects/office"
     },
     {
         "id": 2,
-        "title": "Досуговый центр",
+        "title": "Зеленый дом",
         "url":  "/assets/gallery/pr3.jpg",
-        "link": "/dosug3"
+        "link": "/projects/green-buildinng"
     },
     {
         "id": 3,
-        "title": "Досуговый центр",
+        "title": "Школа",
         "url":  "/assets/gallery/pr4.jpg",
-        "link": "/dosug4"
+        "link": "/projects/school"
     },
     {
         "id": 4,
-        "title": "Досуговый центр",
+        "title": "Project Nurton",
         "url":  "/assets/gallery/pr5.jpg",
-        "link": "/dosug5"
+        "link": "/projects/nurtown"
     }
 ]

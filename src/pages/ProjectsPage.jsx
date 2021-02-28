@@ -19,7 +19,7 @@ const ProjectsPage = props => {
                             title={item.title}
                             titleType={3}
                             text={item.text}
-                            link={item.link}
+                            link={`projects/${item.link}`}
                             media={item.media}
                             className="projects"
                         />

@@ -23,7 +23,6 @@ const Button = ({icon, path, link, className, children, dark, whiteText, noPaddi
         onClick && onClick(e)
     }
 
-
     return (
         <>     
         {

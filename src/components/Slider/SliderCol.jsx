@@ -13,9 +13,10 @@ const SliderCol = ({handlerClick, active, slides, count, children}) => {
             >
                 <img className='slider__img' src={slide.img} alt=""/>
                 <Button 
-                to={slide.url} 
+                    link
+                    path={slide.url} 
                     icon='arrow-right'
-                className="slider__btn"
+                    className="slider__btn"
                 >Взглянуть</Button>
             </div>
         ))
