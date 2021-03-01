@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { useFormik } from 'formik'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { validate } from './validate'
@@ -8,6 +8,10 @@ import './Form.scss'
 
 
 const Form = () => {
+    const [result, setResult] = useState(false)
+    const [resultData, setResultData] =  useState()
+    const formRef = useRef(null)
+
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -19,12 +23,33 @@ const Form = () => {
         },
         validate,
         onSubmit: values => {
-          console.log(JSON.stringify(values, null, 2));
+            const res = Object.values(values);
+            setResult(true)
+            setResultData(res)
+            formRef.current.reset()
         },
       });
 
+
     return (
-            <form className='form'  onSubmit={formik.handleSubmit}>
+        <>
+            {
+                result  && <div className="popup">
+                    <div className="popup__substrate" onClick={() =>  setResult(false)}></div>
+                    <div className="popup__data">
+                        <p className="popup__title">Данные формы</p>
+                    {
+                        resultData && resultData.map((item, index) => (
+                            item && <p key={index} className="popup__text">
+                                {item}
+                            </p>
+                        ) )
+                    }
+                    </div>
+                </div>
+            }
+        
+            <form className='form' ref={formRef} onSubmit={formik.handleSubmit}>
                 <fieldset className='form__fieldset'>
                     <TextField
                         type='text'
@@ -114,6 +139,7 @@ const Form = () => {
 
                 <Button icon='arrow-right' type='submit' dark >Отправить</Button>
             </form>
+        </>
     )
 }
 

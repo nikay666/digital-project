@@ -26,6 +26,47 @@
         border: none;
         width: 100%;
     }
+
+}
+
+.popup{
+
+    &__title{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    &__substrate{
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 79;
+        cursor: pointer;
+    }
+
+    &__data{
+        z-index: 80;
+        padding: 3vh 3vw;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__text{
+        font-size: 1rem;
+    }
+
+
 }
 
 .checkbox{

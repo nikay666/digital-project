@@ -9,6 +9,7 @@ const SliderList = ({handlerClick, active, count, slides}) => {
     const total =  Math.round(slides.length / count)
     const thisNum = active / count + 1
 
+
     return (
         <div className="slider__content">
             <div className="slider__list">
@@ -22,7 +23,12 @@ const SliderList = ({handlerClick, active, count, slides}) => {
                                 {'active':  active <= index && active + count  > index})
                             }
                         >
-                            <img className='slider__img' src={slide.img} alt=""/>
+                            <img 
+                                className='slider__img' 
+             
+                                src={slide.img} 
+                                alt={slide.title}
+                            />
                         </Link>
                     ))
                 }
