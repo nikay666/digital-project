@@ -1,9 +1,28 @@
 import React, { useEffect, useState } from 'react'
+import {database} from './firebase'
 
 export const mediaQueryes =  {
     desktop: '(min-width : 1224px)',
     tablet: '(max-width: 768px)',
     phone: '(max-width: 576px)',
+}
+
+export  function useFirebase(url){
+    const [data, setData] = useState([])
+    useEffect(()  => { 
+        database.ref(url).get().then(function(snapshot){
+        if (snapshot.exists()) {
+          setData(snapshot.val())
+        }
+        else {
+          console.log("No data available");
+        }
+        }).catch(function(error) {
+          console.error(error);
+      })
+    
+    }, [url])
+    return data
 }
 
 export function useFetch(url){

@@ -1,94 +1,23 @@
 import React from 'react'
-import './App.scss';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useFirebase } from './hooks'
 import MainPage from './pages/MainPage';
 import GalleryPage from './pages/GalleryPage';
 import ProjectsPage from './pages/ProjectsPage';
 import CertificatesPage from './pages/CertificatesPage';
 import ContactsPage from './pages/ContactsPage';
+import SinglePage from './pages/SinglePage';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowLeft, faArrowRight, faCheck, faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faLinkedinIn, faPinterestP, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import SinglePage from './pages/SinglePage';
-
-library.add(faMapMarkerAlt, faPhone, faEnvelope, faFacebookF, faTwitter, faLinkedinIn, faPinterestP, faArrowRight, faArrowLeft, faCheck )
-
-const navList = [
-  {
-    id: 0,
-    title: 'Главная',
-    path:  '/'
-  },
-  {
-    id: 1,
-    title: 'Галерея',
-    path: '/gallery'
-  },
-  {
-    id: 2,
-    title: 'Проекты',
-    path: '/projects'
-  },
-  {
-    id: 3,
-    title: 'Сертификаты',
-    path: '/certificates'
-  },
-  {
-    id: 4,
-    title: 'Контакты',
-    path: '/contacts'
-  },
-]
-const contactList = [
-  {
-    id: 0,
-    icon: 'map-marker-alt',
-    text: '100000, Республика  Казахстан, г. Караганда, ул. Телевизионная 10',
-    link: 'map:Республика  Казахстан, г. Караганда, ул. Телевизионная 10',
-  },
-  {
-    id: 1,
-    icon: 'phone',
-    text: '+7(701) 777 68 11',
-    link: 'tel:+77017776811',
-  },
-  {
-    id: 2,
-    icon: 'envelope',
-    text: 'Galym.sultanov@mail.ru',
-    link: 'mailto:Galym.sultanov@mail.ru',
-  }
-]
-const socialList = [
-  { 
-    id: 0,
-    icon: ['fab','facebook-f'],
-    link: 'https://facebook.com',
-  },
-  { 
-    id: 1,
-    icon: ['fab','twitter'],
-    link: 'https://twitter.com'
-  },
-  { 
-    id: 2,
-    icon: ['fab', 'linkedin-in'],
-    link: 'https://linkedin.com'
-  },
-  { 
-    id: 3,
-    icon: ['fab','pinterest-p'],
-    link: 'https://pinterest.com'
-  }
-
-]
-
-
+import './App.scss';
+import './iconLiberary'
+ 
 
 function App() {
+  const navList =  useFirebase('/nav')
+  const socialList =  useFirebase('/socials')
+  const contactList =  useFirebase('/contacts')
+
   return (
     <Router>
       <div className="App">
@@ -103,10 +32,10 @@ function App() {
           <Route exact path="/projects/:link" component={SinglePage} />
         </Switch>
         <Footer 
-        navList={navList}
-        contactList={contactList}
-        socialList={socialList}
-      />
+          navList={navList}
+          contactList={contactList}
+          socialList={socialList}
+        />
       </div>
     </Router>
 

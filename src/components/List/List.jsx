@@ -16,7 +16,8 @@ const List = ({list, icons=false, color='light', type='col'}) => {
             )}
         >
         {
-            list.map((item) => (
+       
+            list && list.map((item) => (
                 <li className='list__item' key={item.id}>
                     <a 
                         href={item.link} 
