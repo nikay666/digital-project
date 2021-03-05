@@ -1,12 +1,10 @@
 import React from 'react'
-import { useFetch } from '../hooks'
+import { useFirebase } from '../hooks'
 import { Slider } from '../components/Slider'
 
 
-const url = '/data/galleryPage.json'
-
 const GalleryPage = () => {
-    const galleryItems = useFetch(url)
+    const galleryItems = useFirebase('/gallery')
 
 
     return (

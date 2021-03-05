@@ -1,12 +1,11 @@
 import React from 'react'
 import { Slider } from '../components/Slider'
-import { useFetch, useMedia } from '../hooks'
+import { useFirebase, useMedia } from '../hooks'
 
 
-const certificateUrl = '/data/certificates.json'
 
 const CertificatesPage = props => {
-    const certificateList = useFetch(certificateUrl)
+    const certificateList  = useFirebase('/certificates')
     const phoneMedia = useMedia('phone')
 
     return (

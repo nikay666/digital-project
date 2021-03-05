@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from '../components/Card'
 import { Tasks } from '../components/Tasks'
 import { MiniGallery } from '../components/MiniGallery'
-import { useFetch } from '../hooks'
+import { useFetch, useFirebase } from '../hooks'
 import { Form } from '../components/Form'
 
 import imgContactForm from '../assets/img/form.jpg'
@@ -10,13 +10,12 @@ import { Slider } from '../components/Slider'
 
 const galleeryUrl = '/data/gallery.json'
 const tasksUrl  = '/data/task.json'
-const cardUrl = '/data/mainCard.json'
 const sliderUrl  = '/data/mainSlider.json'
 
 const MainPage = () => {
     const galleryItems = useFetch(galleeryUrl)
     const tasks  = useFetch(tasksUrl)
-    const card =  useFetch(cardUrl)
+    const card =  useFirebase('/main-card')
     const slides = useFetch(sliderUrl)
 
     return (
