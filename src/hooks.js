@@ -10,6 +10,7 @@ export const mediaQueryes =  {
 export  function useFirebase(url){
     const [data, setData] = useState([])
     useEffect(()  => { 
+       
         database.ref(url).get().then(function(snapshot){
         if (snapshot.exists()) {
           setData(snapshot.val())

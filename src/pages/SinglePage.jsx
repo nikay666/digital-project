@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useFetch } from '../hooks'
+import { useFirebase } from '../hooks'
+import { useParams } from 'react-router'
 
 
-const url = '/data/projectExample.json'
+const SinglePage = () => {
+    const link = useParams()
+    const data = useFirebase(`/projects/${link.link}`)
 
-const SinglePage = ({link}) => {
-    const data  = useFetch(url)[0]
     return (
           <main className='container page'>
               {
-                  data && <>
+                  data.length !== 0 && <>
                   <h1 className='h1'>{data.title_first}<br/><span className='h1__bold'>{data.title_second}</span></h1>
                   <div className="page__preview">
                           <img src={data.preview.src} alt={data.preview.alt}/>
