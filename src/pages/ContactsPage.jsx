@@ -10,8 +10,6 @@ const frame = (
 )
 
 const ContactsPage = ({contacts}) => {
-
-
     return (
             <main className="main">
                 <div className="contacts container columns columns--map">
