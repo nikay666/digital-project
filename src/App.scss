@@ -93,3 +93,16 @@
 
 
 
+.main-slider{
+  .slider__title{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: opacity 0.22s ease-in-out;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+    }
+}
+}

@@ -16,7 +16,8 @@ const MainPage = () => {
     const galleryItems = useFetch(galleeryUrl)
     const tasks  = useFetch(tasksUrl)
     const card =  useFirebase('/main-card')
-    const slides = useFetch(sliderUrl)
+    // const slides = useFetch(sliderUrl)
+    const slides = useFirebase('/projectList')
 
     return (
         <main className='main container'>
@@ -26,9 +27,8 @@ const MainPage = () => {
                 slides={slides}
                 className='main-slider'
                 slidesType='col'
-            >
-                <h1 className='h1'>PROJECT<br/><span className='h1__bold'>NURTOWN</span></h1>
-            </Slider>
+            />
+                
 
             {
                 (card.length > 0 ) &&
