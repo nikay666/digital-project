@@ -8,27 +8,24 @@ import { Form } from '../components/Form'
 import imgContactForm from '../assets/img/form.jpg'
 import { Slider } from '../components/Slider'
 
-const galleeryUrl = '/data/gallery.json'
+
 const tasksUrl  = '/data/task.json'
-const sliderUrl  = '/data/mainSlider.json'
+
+const NUMBER__OF_SLIDES = 5
 
 const MainPage = () => {
-    const galleryItems = useFetch(galleeryUrl)
     const tasks  = useFetch(tasksUrl)
     const card =  useFirebase('/main-card')
-    // const slides = useFetch(sliderUrl)
-    const slides = useFirebase('/projectList')
+    const slides = useFirebase('/projectList', NUMBER__OF_SLIDES)
 
     return (
         <main className='main container'>
-    
             <Slider
                 type='imgs'
                 slides={slides}
                 className='main-slider'
                 slidesType='col'
             />
-                
 
             {
                 (card.length > 0 ) &&
@@ -43,7 +40,7 @@ const MainPage = () => {
             }
             <Tasks tasks={tasks} />
             <MiniGallery
-                items={galleryItems}
+                items={slides}
             />
             <div className="columns">
                 <div className="columns__col contact-form">

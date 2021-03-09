@@ -4,6 +4,7 @@ import './Gallery.scss'
 import MiniGalleryItem from './MiniGalleryItem'
 import { Button } from '../Button'
 
+
 const MiniGallery = ({items}) => {
     return (
         <div className='mini-gallery'>
@@ -11,13 +12,13 @@ const MiniGallery = ({items}) => {
             <div className="mini-gallery__content">
                 {
                     items.map(item => (
-                      <MiniGalleryItem
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        url={item.url}
-                        path={item.link}
-                      />
+                        <MiniGalleryItem
+                            key={item.id}
+                            id={item.id}
+                            title={item.title}
+                            url={item.media[0].url}
+                            path={`/projects/${item.link}`}
+                        />
                     ))
                 }
                  <Button 

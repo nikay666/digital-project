@@ -7,11 +7,11 @@ export const mediaQueryes =  {
     phone: '(max-width: 576px)',
 }
 
-export  function useFirebase(url){
+export  function useFirebase(url, limit = null){
     const [data, setData] = useState([])
     useEffect(()  => { 
-       
-        database.ref(url).get().then(function(snapshot){
+        const query = limit ? database.ref(url).limitToFirst(limit) : database.ref(url)
+        query.get().then(function(snapshot){
         if (snapshot.exists()) {
           setData(snapshot.val())
         }
