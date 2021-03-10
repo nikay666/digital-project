@@ -43,8 +43,9 @@
   }
 }
 .h2{
-  @include titles(4rem, $text_dark_grey, 300 );
+  @include titles(4rem, $text_dark_grey, 100 );
 
+  line-height: 1;
   @media (max-width: $screen_l) {
     font-size: 3rem;
   }
@@ -53,7 +54,7 @@
   }
 }
 .h3{
-@include titles(2.5rem, $text_dark_grey, lighter );
+@include titles(2.5rem, $text_dark, lighter );
   @media (max-width: $screen_l) {
     font-size: 2rem;
   }

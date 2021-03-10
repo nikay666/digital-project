@@ -4,9 +4,14 @@
     display: flex;
     background-color: $bg_grey_light;
     position: relative;
-    height: 435px;
+    align-items: center;
+    min-height: 435px;
     padding: 30px 70px;
     gap: 30px;
+
+    &__btn{
+        margin-top: auto;
+    }
 
   
     &__content{
@@ -58,8 +63,11 @@
 
     &--projects{
         padding: 0;
+        height: 435px;
+        align-items: flex-start;
+
         #{$this}__img{
-            height: auto;
+            height: 100%;
             width: 50%;
         }
         #{$this}__content{
