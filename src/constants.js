@@ -1,0 +1,1 @@
+export const NUMBER__OF_SLIDES = 5

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {database} from './firebase'
 
 export const mediaQueryes =  {
@@ -9,6 +9,7 @@ export const mediaQueryes =  {
 
 export  function useFirebase(url, limit = null){
     const [data, setData] = useState([])
+
     useEffect(()  => { 
         const query = limit ? database.ref(url).limitToFirst(limit) : database.ref(url)
         query.get().then(function(snapshot){
@@ -22,7 +23,7 @@ export  function useFirebase(url, limit = null){
           console.error(error);
       })
     
-    }, [url])
+    }, [url, limit])
     return data
 }
 

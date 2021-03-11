@@ -2,19 +2,15 @@ import React from 'react'
 import { Card } from '../components/Card'
 import { Tasks } from '../components/Tasks'
 import { MiniGallery } from '../components/MiniGallery'
-import { useFetch, useFirebase } from '../hooks'
+import { useFirebase } from '../hooks'
 import { Form } from '../components/Form'
-
 import imgContactForm from '../assets/img/form.jpg'
 import { Slider } from '../components/Slider'
+import { NUMBER__OF_SLIDES } from '../constants'
 
-
-const tasksUrl  = '/data/task.json'
-
-const NUMBER__OF_SLIDES = 5
 
 const MainPage = () => {
-    const tasks  = useFetch(tasksUrl)
+    const tasks = useFirebase('/tasks')
     const card =  useFirebase('/main-card')
     const slides = useFirebase('/projectList', NUMBER__OF_SLIDES)
 
@@ -57,7 +53,5 @@ const MainPage = () => {
         </main>
     )
 }
-
-
 
 export default MainPage
