@@ -2,10 +2,6 @@ import SliderCol from "./SliderCol"
 import SliderGallery from "./SliderGallery"
 import SliderList from "./SliderList"
 
-export const NUM_IMG_IN_GAL = 10
-export const NUM_IMG_IN_GAL_MD = 8
-export const NUM_IMG_IN_GAL_SM = 2
-
 export const sliderTemplates = {
     col: SliderCol,
     list: SliderList,

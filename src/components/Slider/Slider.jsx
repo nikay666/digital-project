@@ -1,9 +1,10 @@
 import React, {  useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { getGroups, NUM_IMG_IN_GAL, NUM_IMG_IN_GAL_MD, NUM_IMG_IN_GAL_SM, sliderTemplates } from './sliderUtil'
+import { getGroups, sliderTemplates } from './sliderUtil'
 import './Slider.scss'
 import { useMedia } from '../../hooks'
+import { NUM_IMG_IN_GAL, NUM_IMG_IN_GAL_MD, NUM_IMG_IN_GAL_SM } from '../../constants'
 
 const Slider = ({slides, className, slidesType, slidesCount, children}) => {
     const [active, setActive] = useState(0)

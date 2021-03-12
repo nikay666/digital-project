@@ -12,7 +12,7 @@ export const validate = (values) =>{
     }
     if (!values.phone) {
         errors.phone = 'Обязательное поле';
-      } else if (!/(?:\+|\d)[\d\-\(\) ]{9,}\d/gi.test(values.phone)) {
+      } else if (!/(?:\+|\d)[\d\-() ]{9,}\d/gi.test(values.phone)) {
         errors.phone = 'Некорректный  телефон';
     }
     if (!values.textarea) {
