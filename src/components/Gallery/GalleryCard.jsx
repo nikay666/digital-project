@@ -9,30 +9,25 @@ const GalleryCard = ({img, text}) => {
         setFullImg(!fullImg)
     }
     return (
-        <div className={classNames("gallery__card g-card", {'g-card--full': fullImg})}>
-            <div   
-                className="g-card__substrate"
-                onClick={handlerClick}
-                
-            />
+        <div 
+            onClick={handlerClick}
+            className={classNames("gallery__card g-card", {'full-img': fullImg})}
+        >
+            {   fullImg && 
+                <div    
+                    className="g-card__substrate full-img__substrate"
+                    onClick={handlerClick} 
+                />
+            }
             <img 
-                onClick={handlerClick}
-                className='g-card__img' 
+                onClick={fullImg ? handlerClick : null}
+                className={classNames('g-card__img full-img__img', {'active': fullImg})} 
                 src={img} 
                 alt={text}
             />
-            {
-                fullImg && <img 
-                    onClick={handlerClick}
-                    className='g-card__img full' 
-                    src={img} 
-                    alt={text}
-                />
-            }
             <div className="g-card__desc">
                 <p className="g-card__text">{text}</p>
             </div>
-    
         </div>
     )
 }
