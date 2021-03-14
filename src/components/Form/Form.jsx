@@ -5,9 +5,10 @@ import { validate } from './validate'
 import {Button} from '../Button'
 import { TextField } from '../Input'
 import './Form.scss'
+import classNames from 'classnames'
 
 
-const Form = () => {
+const Form = ({className=''}) => {
     const [result, setResult] = useState(false)
     const [resultData, setResultData] =  useState()
     const formRef = useRef(null)
@@ -49,7 +50,7 @@ const Form = () => {
                 </div>
             }
         
-            <form className='form' ref={formRef} onSubmit={formik.handleSubmit}>
+            <form className={classNames('form', className && `form--${className}`)} ref={formRef} onSubmit={formik.handleSubmit}>
                 <fieldset className='form__fieldset'>
                     <TextField
                         type='text'

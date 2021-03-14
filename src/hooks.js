@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {database} from './firebase'
 
 export const mediaQueryes =  {
-    desktop: '(min-width : 1224px)',
+    desktop: '(min-width: 1224px)',
     tablet: '(max-width: 768px)',
     phone: '(max-width: 576px)',
 }
@@ -43,20 +43,21 @@ export function useFetch(url){
 export function useMedia(query){
     const queryToMatch =  mediaQueryes[query] 
     const [matches, setMatches] = useState(window.matchMedia(queryToMatch).matches)
+    const safari = (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) 
 
     useEffect(() =>  {
         if (typeof window !== 'object') return;
         if (!window.matchMedia) return;
 
         const media = window.matchMedia(queryToMatch)
+   
         if(media.matches !== matches) setMatches(media.matches)
-
         const listener = () => setMatches(media.matches)
-        media.addEventListener('change', listener)
+        safari ? media.addListener(listener) : media.addEventListener('change', listener)
 
-        return () => media.removeEventListener('change', listener)
+        return safari ?  () => media.removeListener(listener) : () => media.removeEventListener('change', listener)
 
-    }, [queryToMatch, matches])
+    }, [queryToMatch, matches, safari])
     return  matches
 }
 

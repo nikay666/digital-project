@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../components/Button'
+import { Form } from '../components/Form'
 
 const frame = (
     <iframe 
@@ -10,6 +11,9 @@ const frame = (
 )
 
 const ContactsPage = ({contacts}) => {
+    const [formShow, setFormShow] = useState(false)
+
+    const handlerClick = () => setFormShow(!formShow)
     return (
             <main className="main">
                 <div className="contacts container columns columns--map">
@@ -25,11 +29,22 @@ const ContactsPage = ({contacts}) => {
                         </div>
                         <Button
                             dark
+                            onClick={handlerClick}
                         >обратная связь</Button>
                     </div>
                     <div className="columns__col">
                         {frame}
                     </div>
+    
+                    {
+                        formShow && <div  className="contacts__form">
+                            <Form className="popup"/>      
+                            <div 
+                                onClick={handlerClick}
+                                className="contacts__substraction"
+                            ></div>         
+                        </div>
+                    }
                 </div>
             </main>
     )

@@ -5,6 +5,7 @@
     align-items: baseline;
     gap: 20px;
     width: 100%;
+    background-color: $bg_clear_white;
 
     &__agree{
         display: flex;
@@ -25,6 +26,19 @@
         gap: 10px;
         border: none;
         width: 100%;
+    }
+
+    &--popup{
+        max-width: 550px;
+        padding: 65px 50px;
+        z-index: 200;
+
+        @media (max-width: $screen_md) {
+            width: 90%;
+        }
+        @media (max-width: $screen_sm) {
+            padding: 10% 5%;
+        }
     }
 
 }
