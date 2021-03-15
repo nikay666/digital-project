@@ -60,6 +60,3 @@ export function useMedia(query){
     }, [queryToMatch, matches, safari])
     return  matches
 }
-
-
-

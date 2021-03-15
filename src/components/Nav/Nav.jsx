@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import './Nav.scss'
 import { Link } from 'react-router-dom'
+import { ScrollToTop } from '../ScrollToTop'
 
 
 const Nav = ({list, type, classes, onClickLink}) => {
@@ -13,11 +14,13 @@ const Nav = ({list, type, classes, onClickLink}) => {
             {
                 list.map((item) => (
                     <li key={item.id} className="nav__item">
-                        <Link 
-                            onClick={onClickLink}
-                            to={item.path} 
-                            className="nav__link"
-                        >{item.title}</Link>
+                        <ScrollToTop>
+                            <Link 
+                                onClick={onClickLink}
+                                to={item.path} 
+                                className="nav__link"
+                            >{item.title}</Link>
+                        </ScrollToTop>
                     </li>
                 ))
             }
