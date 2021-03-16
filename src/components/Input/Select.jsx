@@ -5,7 +5,7 @@ const Select = ({placeholder, name, required, options, onChange}) => {
     return (
         <select 
             name={name} 
-            className='textField__input'
+            className='textField__input textField__select'
             defaultValue="placeholder"
             onChange={onChange}
             required={required}
