@@ -1,3 +1,4 @@
+@import '../../styles/mixins.scss';
 .slider{
     $this: &;
 
@@ -6,6 +7,7 @@
             width: 100%;
             flex-wrap: wrap;
             gap: 50px;
+            @include flexGap(50px, row);
         }
 
         #{$this}__slide{
@@ -31,6 +33,7 @@
         #{$this}__content{
             gap: 50px;
             justify-content: space-between;
+            @include flexGap(50px, row);
         }
     }
 
@@ -44,6 +47,7 @@
         align-items: flex-start;
         justify-content: center;
         gap: 90px;
+        @include flexGap(90px, column);
 
         &:nth-child(2){
             width: 60%;

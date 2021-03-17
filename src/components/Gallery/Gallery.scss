@@ -1,10 +1,11 @@
 @import '../../styles/var.scss';
-
+@import '../../styles/mixins.scss';
 .gallery{
     display: flex;
     flex-wrap: wrap;
     gap: 1vw;
     justify-content: flex-start;
+    @include flexGap(1vw, all);
 
     &__card{
         flex-basis: calc(100% / 5 - 1vw);

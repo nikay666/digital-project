@@ -28,6 +28,7 @@
        
         #{$this}__list{
             gap: 5px 5%;
+            @include flexGap(5%, row);
             
             justify-content: flex-end;
             flex-grow: 1;
@@ -75,7 +76,6 @@
     }
     &--footer{
         #{$this}__list{
-            // gap: 15%;
             flex-direction: column;
         }
         #{$this}__link{

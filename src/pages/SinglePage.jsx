@@ -13,11 +13,11 @@ const SinglePage = () => {
               {
                   data.length !== 0 && <>
                   <h1 className='h1'>{data.title_first}<br/><span className='h1__bold'>{data.title_second}</span></h1>
-                  <div className="page__preview">
+                  <div className="page__preview page__gap">
                           <img src={data.preview.src} alt={data.preview.alt}/>
                   </div>
-                  <div className="page__content">
-                      <p className="page__text">{data.text}</p>
+                  <div className="page__content page__gap">
+                      <p className="page__text ">{data.text}</p>
                       {
                           data.imgs.map((img, index) => (
                               <div className="page__img" key={`index--${index}`}>

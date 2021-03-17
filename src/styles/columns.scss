@@ -1,7 +1,9 @@
+@import './mixins.scss';
 .columns{
     $this: &;
     display: flex;
     gap: 30px;
+    @include flexGap(30px, row, '*');
   
     &__col{
       width: 100%;
@@ -9,6 +11,7 @@
       flex-direction: column;
       gap: 30px;
       align-items: baseline;
+      @include flexGap(30px, column, '*');
     }
   
     @media (max-width: $screen_l) {

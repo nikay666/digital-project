@@ -1,5 +1,7 @@
 @import '../../styles/var.scss';
+@import '../../styles/mixins.scss';
 .footer{
+    $this: &;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +26,8 @@
         display: flex;
         justify-content: space-evenly;
         gap: 5vw;
+        @include flexGap(5vw, row);
+
         &::before{
             content: '';
             position: absolute;
@@ -51,15 +55,22 @@
         }
         &__item{
            flex-basis: 45%;
-
             &:first-child{
                 order: 4;
                 flex-basis: 20%;
             }
+
+            @supports not ((scroll-behavior: smooth) and (gap: 30px)){
+                margin-bottom: 5vw;
+                &:nth-child(2n){
+                    margin-left: 0;
+                }
+            }
+         
+
         }
     }
     @media (max-width: $screen_sm) {
-
 
         &__title{
             margin-bottom: 0.5rem;
@@ -70,7 +81,7 @@
             flex-direction: column;
             justify-content: flex-start;
             gap:2rem;
-    
+            @include flexGap(2rem, column);
         }
         &__item{
             flex-basis: 100%;

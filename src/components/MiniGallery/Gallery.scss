@@ -3,21 +3,50 @@
 
 $gap: 30px;
 $gap_sm: 10px;
+
 .mini-gallery{
     display: flex;
     width: 100%;    
     flex-direction: column;
     align-items: baseline;
     gap: 2vh;
+    @include flexGap(2vh, column);
 
     &__content{
         display: flex;
         width: 100%;   
         flex-wrap: wrap;
         gap: $gap;
+        @include flexGap($gap, all);
 
         @media (max-width: $screen_l) {
             gap: $gap_sm;
+            @include flexGap($gap_sm, all);
+        }
+
+        @supports not ((scroll-behavior: smooth) and (gap: 30px)){
+            & .cover:first-child,
+            & .cover:nth-of-type(5n + 3){
+                margin-left: 0;
+            }
+   
+            & .cover:nth-of-type(5n + 2),
+            & .cover:nth-of-type(5n + 5) {
+                margin-right: 0;
+            }
+            @media (max-width: $screen_md) {
+                & .cover:nth-of-type(2n + 2){
+                    margin-right: 0;
+                }
+                & .cover:nth-of-type(2n + 1){
+                    margin-left: 0;
+                }
+                & .cover:nth-of-type(5n + 5) {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+            }
         }
 
     }
@@ -46,7 +75,8 @@ $gap_sm: 10px;
     z-index: 0;
     transition: 0.3s ease-in-out;
     text-decoration: none;
-
+    @include flexGap(15px, column);
+    
     &::before{
         position: absolute;
         display: block;
@@ -101,6 +131,7 @@ $gap_sm: 10px;
 
     $list:createListForGallery($gap);
     @include miniGalleryLayout($list);
+
     @media (max-width: $screen_xl) {
     
         &__title{

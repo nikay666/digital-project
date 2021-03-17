@@ -1,8 +1,10 @@
+@import './mixins.scss';
 .info-block{
     display: flex;
     flex-direction: column;
     align-items: baseline;
     gap: 30px;
+    @include flexGap(30px, column, '*');
   
     &__title, &__link{
       color: $text_dark;
