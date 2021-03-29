@@ -47,7 +47,7 @@ const SliderCol = ({handlerClick, active, slides, count}) => {
                            }
                            <Button 
                                link
-                               path={slide.url} 
+                               path={`/projects/${slide.link}`} 
                                icon='arrow-right'
                                className="slider__btn"
                            >Взглянуть</Button>
