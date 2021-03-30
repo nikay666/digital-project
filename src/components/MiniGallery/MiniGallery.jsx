@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './Gallery.scss'
 import MiniGalleryItem from './MiniGalleryItem'
 import { Button } from '../Button'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 
 const MiniGallery = ({items}) => {
