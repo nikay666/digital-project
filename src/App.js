@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, HashRouter, Route, Switch } from 'react-router-dom'
 import { useFirebase } from './hooks'
 import MainPage from './pages/MainPage';
 import GalleryPage from './pages/GalleryPage';
@@ -19,7 +19,8 @@ function App() {
   const contactList =  useFirebase('/contacts')
 
   return (
-    <Router>
+    <Router >
+      <HashRouter hashType="noslash">
       <div className="App">
         <Header list={navList} />
         <Switch>
@@ -37,24 +38,10 @@ function App() {
           socialList={socialList}
         />
       </div>
+      </HashRouter>
     </Router>
 
   );
 }
 
 export default App;
-
-
-/*
-проекты
-  PROJECT NURTOWN
-    title
-    превью  
-    3 фото
-    text
-  Досуговый ценр
-  общеоразовательная школа
-  Паркинг на 500 автомобилей
-  Проект интерьера офиса
-
-*/

@@ -14,7 +14,7 @@ const Nav = ({list, type, classes, onClickLink}) => {
             {
                 list.map((item) => (
                     <li key={item.id} className="nav__item">
-                        <ScrollToTop>
+                        <ScrollToTop top={true}>
                             <Link 
                                 onClick={onClickLink}
                                 to={item.path} 
